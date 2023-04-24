@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="InfoBoxCell" customModule="EventLocator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="82"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-UJ-mk1">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="82"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nys-eg-7WW">
+                                <rect key="frame" x="14" y="14" width="336" height="20"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="wOp-k6-orY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE8-lL-zjm">
+                                <rect key="frame" x="14" y="48" width="158" height="20"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="2xA-Kz-j8X"/>
+                                    <constraint firstAttribute="height" constant="20" id="h8K-Iu-M2Q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZE8-lL-zjm" firstAttribute="leading" secondItem="qBM-UJ-mk1" secondAttribute="leading" constant="14" id="N99-uR-JgQ"/>
+                            <constraint firstItem="nys-eg-7WW" firstAttribute="leading" secondItem="qBM-UJ-mk1" secondAttribute="leading" constant="14" id="a5K-31-7fW"/>
+                            <constraint firstAttribute="trailing" secondItem="nys-eg-7WW" secondAttribute="trailing" constant="36" id="fnd-ch-72I"/>
+                            <constraint firstItem="ZE8-lL-zjm" firstAttribute="top" secondItem="nys-eg-7WW" secondAttribute="bottom" constant="14" id="jIS-hY-sEp"/>
+                            <constraint firstItem="nys-eg-7WW" firstAttribute="top" secondItem="qBM-UJ-mk1" secondAttribute="top" constant="14" id="r8y-UT-WgE"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="appPurple"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="qBM-UJ-mk1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8z3-Rq-mar"/>
+                <constraint firstAttribute="bottom" secondItem="qBM-UJ-mk1" secondAttribute="bottom" id="8zk-Ox-sSG"/>
+                <constraint firstItem="qBM-UJ-mk1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nar-yZ-exu"/>
+                <constraint firstAttribute="trailing" secondItem="qBM-UJ-mk1" secondAttribute="trailing" id="T5Q-Sl-f1L"/>
+            </constraints>
+            <connections>
+                <outlet property="infoBoxCell" destination="qBM-UJ-mk1" id="ZAS-vq-L5k"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="appPurple">
+            <color red="0.4392156862745098" green="0.396078431372549" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

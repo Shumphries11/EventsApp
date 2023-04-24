@@ -13,12 +13,17 @@ class EventsViewController: UIViewController {
             let snapshot = self.dataSource.snapshot()
             let sectionType = snapshot.sectionIdentifiers[sectionIndex].type
             switch sectionType {
-            case .homeHeader: return LayoutSectionFactory.homeHeader()
+            case .eventsHeader: return LayoutSectionFactory.eventsHeader()
+            case .eventType: return LayoutSectionFactory.eventType()
+            case .eventTitle: return LayoutSectionFactory.eventTitle()
+            case .subTitle: return LayoutSectionFactory.subTitle()
+            case .infoBox: return LayoutSectionFactory.infoBox()
+            case .eventTitle: return LayoutSectionFactory.eventTitle()
+            case .eventDescription: return LayoutSectionFactory.eventDescription()
+            case .buyNow: return LayoutSectionFactory.buyNow()
             default: return nil
             }
-            
         }
-        
         return layout
     }()
     
@@ -35,7 +40,14 @@ class EventsViewController: UIViewController {
     private func setupEventsCV() {
         collectionView.contentInsetAdjustmentBehavior = .never
         let cells: [RegisterableView] = [
-            .nib(HomeHeaderCell.self)
+            .nib(EventsHeaderCell.self),
+            .nib(EventTypeCell.self),
+            .nib(EventTitleCell.self),
+            .nib(SubTitleCell.self),
+            .nib(InfoBoxCell.self),
+            .nib(DescriptionCell.self),
+            .nib(BuyNowCell.self)
+            
         ]
         collectionView.register(cells: cells)
         collectionView.delegate = self
@@ -51,8 +63,29 @@ class EventsViewController: UIViewController {
             let sectionType = snapshot.sectionIdentifiers[indexPath.section].type
             
             switch sectionType {
-            case .homeHeader:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHeaderCell.reuseIdentifier, for: indexPath)
+            case .eventsHeader:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventsHeaderCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .eventType:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventTypeCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .eventTitle:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventTitleCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .subTitle:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubTitleCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .infoBox:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InfoBoxCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .eventTitle:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventTitleCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .eventDescription:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DescriptionCell.reuseIdentifier, for: indexPath)
+                return cell
+            case .buyNow:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BuyNowCell.reuseIdentifier, for: indexPath)
                 return cell
           default:
                 return nil
@@ -60,7 +93,14 @@ class EventsViewController: UIViewController {
         }
             
             let sections = [
-                Section(type: .homeHeader, items: [Event()]),
+                Section(type: .eventsHeader, items: [Event()]),
+                Section(type: .eventType, items: [Event(), Event(), Event(), Event(), Event(), Event(), Event()]),
+                Section(type: .eventTitle, items: [Event()]),
+                Section(type: .subTitle, items: [Event()]),
+                Section(type: .infoBox, items: [Event()]),
+                Section(type: .eventTitle, items: [Event()]),
+                Section(type: .eventDescription, items: [Event()]),
+                Section(type: .buyNow, items: [Event()])
                 ]
             
             var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()

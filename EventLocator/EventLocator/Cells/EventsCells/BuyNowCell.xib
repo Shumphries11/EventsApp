@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BuyNowCell" customModule="EventLocator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wst-uX-8jD">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-Ac-Rtq">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="GjR-1I-Qd8"/>
+                                    <constraint firstAttribute="width" constant="48" id="UBa-7i-y3d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUu-qP-vi6">
+                                <rect key="frame" x="62" y="0.0" width="324" height="48"/>
+                                <color key="backgroundColor" name="appPurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="YcY-RC-aje"/>
+                                    <constraint firstAttribute="width" constant="324" id="uq3-pI-tz3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ltL-Ac-Rtq" firstAttribute="leading" secondItem="wst-uX-8jD" secondAttribute="leading" id="9m6-kb-lAN"/>
+                            <constraint firstAttribute="trailing" secondItem="KUu-qP-vi6" secondAttribute="trailing" constant="14" id="VBc-Jl-dIL"/>
+                            <constraint firstItem="KUu-qP-vi6" firstAttribute="leading" secondItem="ltL-Ac-Rtq" secondAttribute="trailing" constant="14" id="cjS-3g-IE0"/>
+                            <constraint firstItem="ltL-Ac-Rtq" firstAttribute="top" secondItem="wst-uX-8jD" secondAttribute="top" id="wII-IU-754"/>
+                            <constraint firstItem="KUu-qP-vi6" firstAttribute="top" secondItem="wst-uX-8jD" secondAttribute="top" id="yOu-b8-4fm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="wst-uX-8jD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8Mi-pi-txY"/>
+                <constraint firstItem="wst-uX-8jD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="COQ-D8-KTq"/>
+                <constraint firstAttribute="bottom" secondItem="wst-uX-8jD" secondAttribute="bottom" id="COp-dp-zzX"/>
+                <constraint firstAttribute="trailing" secondItem="wst-uX-8jD" secondAttribute="trailing" id="ga8-NA-Ot9"/>
+            </constraints>
+            <size key="customSize" width="394" height="48"/>
+            <connections>
+                <outlet property="buyNowCell" destination="wst-uX-8jD" id="O0b-su-m8p"/>
+            </connections>
+            <point key="canvasLocation" x="143.5114503816794" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="appPurple">
+            <color red="0.4392156862745098" green="0.396078431372549" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
