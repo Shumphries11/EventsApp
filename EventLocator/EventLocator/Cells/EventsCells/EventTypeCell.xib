@@ -18,7 +18,23 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-aF-0QY">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
-                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4s-L6-fzm">
+                                <rect key="frame" x="31" y="6" width="38" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="MZj-bT-p7K"/>
+                                    <constraint firstAttribute="width" constant="38" id="djl-3f-fGo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u4s-L6-fzm" firstAttribute="centerX" secondItem="YYh-aF-0QY" secondAttribute="centerX" id="Mbr-bl-NDS"/>
+                            <constraint firstItem="u4s-L6-fzm" firstAttribute="centerY" secondItem="YYh-aF-0QY" secondAttribute="centerY" id="qaJ-HR-1oW"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
                                 <real key="value" value="10"/>

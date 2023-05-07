@@ -18,7 +18,21 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8V-c6-exh">
                         <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
-                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLm-KV-0ZK">
+                                <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bLm-KV-0ZK" secondAttribute="trailing" id="3cT-ik-ykM"/>
+                            <constraint firstItem="bLm-KV-0ZK" firstAttribute="top" secondItem="y8V-c6-exh" secondAttribute="top" id="HIE-T8-tng"/>
+                            <constraint firstAttribute="bottom" secondItem="bLm-KV-0ZK" secondAttribute="bottom" id="Qse-1h-VxN"/>
+                            <constraint firstItem="bLm-KV-0ZK" firstAttribute="leading" secondItem="y8V-c6-exh" secondAttribute="leading" id="UpM-zx-09T"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>

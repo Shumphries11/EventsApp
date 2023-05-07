@@ -1,10 +1,3 @@
-//
-//  MainTabBarController.swift
-//  CoordinatorPatternExample
-//
-//  Created by Craig Clayton on 2/2/23.
-//
-
 import UIKit
 
 class MainTabBarController: UITabBarController {

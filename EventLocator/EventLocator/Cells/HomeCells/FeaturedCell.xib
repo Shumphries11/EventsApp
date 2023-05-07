@@ -19,7 +19,42 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeX-X7-7Jl">
                         <rect key="frame" x="0.0" y="0.0" width="174" height="200"/>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EV8-VB-LpB">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flr-wd-kpm">
+                                <rect key="frame" x="14" y="137" width="142" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="eCx-PJ-Zad"/>
+                                    <constraint firstAttribute="height" constant="20" id="wBc-Cq-HRq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg2-Np-7rz">
+                                <rect key="frame" x="14" y="167" width="126" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="6RW-rE-edj"/>
+                                    <constraint firstAttribute="height" constant="20" id="iXX-MW-Ueg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="EV8-VB-LpB" firstAttribute="leading" secondItem="SeX-X7-7Jl" secondAttribute="leading" id="0UP-lP-mSQ"/>
+                            <constraint firstItem="EV8-VB-LpB" firstAttribute="top" secondItem="SeX-X7-7Jl" secondAttribute="top" id="0rw-xg-HI8"/>
+                            <constraint firstItem="fg2-Np-7rz" firstAttribute="leading" secondItem="SeX-X7-7Jl" secondAttribute="leading" constant="14" id="5bA-Rg-r7A"/>
+                            <constraint firstItem="Flr-wd-kpm" firstAttribute="leading" secondItem="SeX-X7-7Jl" secondAttribute="leading" constant="14" id="5kA-9z-eWI"/>
+                            <constraint firstItem="Flr-wd-kpm" firstAttribute="top" secondItem="SeX-X7-7Jl" secondAttribute="top" constant="137" id="DY5-1O-p3j"/>
+                            <constraint firstAttribute="bottom" secondItem="EV8-VB-LpB" secondAttribute="bottom" id="Km5-zY-2wI"/>
+                            <constraint firstItem="fg2-Np-7rz" firstAttribute="top" secondItem="Flr-wd-kpm" secondAttribute="bottom" constant="10" id="sft-X9-NRs"/>
+                            <constraint firstAttribute="trailing" secondItem="EV8-VB-LpB" secondAttribute="trailing" id="tzy-Jk-8SN"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -42,8 +77,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

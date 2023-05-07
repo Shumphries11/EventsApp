@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,15 +21,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Awm-Lr-Zzi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Tc-02I">
-                                <rect key="frame" x="0.0" y="301" width="414" height="96"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-ER-dVf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ib-eb-LzC">
                                 <rect key="frame" x="366" y="60" width="34" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,15 +37,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Tc-02I">
+                                <rect key="frame" x="0.0" y="301" width="414" height="96"/>
+                                <color key="backgroundColor" name="eventBgd"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
+                            <constraint firstItem="FIW-ER-dVf" firstAttribute="leading" secondItem="Awm-Lr-Zzi" secondAttribute="leading" id="1ZF-So-9kJ"/>
                             <constraint firstItem="kgA-Tc-02I" firstAttribute="top" secondItem="Awm-Lr-Zzi" secondAttribute="top" constant="301" id="38K-jT-sbJ"/>
+                            <constraint firstAttribute="bottom" secondItem="FIW-ER-dVf" secondAttribute="bottom" id="8JR-RU-fV7"/>
                             <constraint firstAttribute="trailing" secondItem="kgA-Tc-02I" secondAttribute="trailing" id="A50-Sy-qFu"/>
                             <constraint firstItem="kgA-Tc-02I" firstAttribute="leading" secondItem="Awm-Lr-Zzi" secondAttribute="leading" id="SM1-CU-Bd7"/>
+                            <constraint firstItem="FIW-ER-dVf" firstAttribute="top" secondItem="Awm-Lr-Zzi" secondAttribute="top" id="Ttb-oR-chb"/>
                             <constraint firstItem="6Ib-eb-LzC" firstAttribute="top" secondItem="Awm-Lr-Zzi" secondAttribute="top" constant="60" id="Zua-Jh-Xrl"/>
                             <constraint firstAttribute="bottom" secondItem="kgA-Tc-02I" secondAttribute="bottom" constant="-61" id="asq-vE-1fA"/>
                             <constraint firstAttribute="trailing" secondItem="6Ib-eb-LzC" secondAttribute="trailing" constant="14" id="edX-GV-IMn"/>
+                            <constraint firstAttribute="trailing" secondItem="FIW-ER-dVf" secondAttribute="trailing" id="hcM-CB-KI5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -69,6 +77,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <namedColor name="eventBgd">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

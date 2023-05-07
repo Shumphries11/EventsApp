@@ -22,17 +22,63 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nys-eg-7WW">
                                 <rect key="frame" x="14" y="14" width="336" height="20"/>
-                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-yp-3Qo">
+                                        <rect key="frame" x="0.0" y="0.0" width="13" height="20"/>
+                                        <color key="tintColor" name="appPurple"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="13" id="fvd-Ze-1hl"/>
+                                            <constraint firstAttribute="height" constant="20" id="kvn-wy-98k"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inw-bA-jqr">
+                                        <rect key="frame" x="25" y="0.0" width="311" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Inw-bA-jqr" secondAttribute="trailing" id="71e-kV-bdt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Inw-bA-jqr" secondAttribute="bottom" id="Hyv-cA-gNV"/>
+                                    <constraint firstItem="Inw-bA-jqr" firstAttribute="top" secondItem="nys-eg-7WW" secondAttribute="top" id="L3z-Bz-ta1"/>
+                                    <constraint firstItem="Inw-bA-jqr" firstAttribute="leading" secondItem="qgS-yp-3Qo" secondAttribute="trailing" constant="12" id="g00-2K-Q9l"/>
+                                    <constraint firstItem="qgS-yp-3Qo" firstAttribute="top" secondItem="nys-eg-7WW" secondAttribute="top" id="t0W-K8-9iX"/>
                                     <constraint firstAttribute="height" constant="20" id="wOp-k6-orY"/>
+                                    <constraint firstItem="qgS-yp-3Qo" firstAttribute="leading" secondItem="nys-eg-7WW" secondAttribute="leading" id="z7w-Sn-tOS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE8-lL-zjm">
                                 <rect key="frame" x="14" y="48" width="158" height="20"/>
-                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="be2-no-1zm">
+                                        <rect key="frame" x="0.0" y="4.6666666666666643" width="14" height="12.000000000000004"/>
+                                        <color key="tintColor" name="appPurple"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="4mX-Qz-1sd"/>
+                                            <constraint firstAttribute="width" constant="14" id="tFb-BJ-mrg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvR-OG-q1g">
+                                        <rect key="frame" x="26" y="0.0" width="130" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ZWE-g4-shB"/>
+                                            <constraint firstAttribute="width" constant="130" id="kvj-4M-D97"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="2xA-Kz-j8X"/>
+                                    <constraint firstItem="be2-no-1zm" firstAttribute="top" secondItem="ZE8-lL-zjm" secondAttribute="top" constant="3" id="a8m-nf-wjp"/>
+                                    <constraint firstItem="RvR-OG-q1g" firstAttribute="top" secondItem="ZE8-lL-zjm" secondAttribute="top" id="e2x-Ln-LbT"/>
                                     <constraint firstAttribute="height" constant="20" id="h8K-Iu-M2Q"/>
+                                    <constraint firstItem="be2-no-1zm" firstAttribute="leading" secondItem="ZE8-lL-zjm" secondAttribute="leading" id="iF8-v2-tsE"/>
+                                    <constraint firstItem="RvR-OG-q1g" firstAttribute="leading" secondItem="be2-no-1zm" secondAttribute="trailing" constant="12" id="vhv-xU-Qd7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -69,8 +115,10 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="mappin.and.ellipse" catalog="system" width="117" height="128"/>
         <namedColor name="appPurple">
-            <color red="0.4392156862745098" green="0.396078431372549" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43900001049041748" green="0.39599999785423279" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

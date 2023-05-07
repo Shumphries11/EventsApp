@@ -73,9 +73,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-Gf-EBK">
                                 <rect key="frame" x="366" y="48" width="34" height="34"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NHs-k7-nLn">
+                                        <rect key="frame" x="7" y="7.6666666666666679" width="20" height="18.666666666666664"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="XvO-Av-oPm"/>
+                                            <constraint firstAttribute="height" constant="20" id="swQ-OZ-4ME"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="NHs-k7-nLn" firstAttribute="centerY" secondItem="ebQ-Gf-EBK" secondAttribute="centerY" id="8j3-Qg-3st"/>
                                     <constraint firstAttribute="width" constant="34" id="MAH-qx-rx6"/>
+                                    <constraint firstItem="NHs-k7-nLn" firstAttribute="centerX" secondItem="ebQ-Gf-EBK" secondAttribute="centerX" id="NHM-AZ-o5U"/>
                                     <constraint firstAttribute="height" constant="34" id="vCZ-nj-0tH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -119,6 +132,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <namedColor name="appPurple">
             <color red="0.43900001049041748" green="0.39599999785423279" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -4,48 +4,39 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DescriptionCell" customModule="EventLocator" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="386" height="144"/>
+            <rect key="frame" x="0.0" y="0.0" width="406" height="144"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="386" height="144"/>
+                <rect key="frame" x="0.0" y="0.0" width="406" height="144"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bi7-at-yRv">
-                        <rect key="frame" x="0.0" y="0.0" width="386" height="144"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                        <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="53" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHY-Yy-yOO">
+                        <rect key="frame" x="0.0" y="0.0" width="406" height="144"/>
+                        <string key="text">Vivamus volutpat eu nulla imperdiet a tristique. Fusce fringilla in urna sit amet two ullamcorper. Vivamus sit amet eleifend elit. Nam gravida this lectus vitae luctus finibus. Pellentesque concert habitant morbi tristique senectus et netus et on malesuada fames ac turpis egestas the festival.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="bi7-at-yRv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TW4-uk-Kqx"/>
-                <constraint firstItem="bi7-at-yRv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jda-FB-uen"/>
-                <constraint firstAttribute="trailing" secondItem="bi7-at-yRv" secondAttribute="trailing" id="k6R-ub-CJ2"/>
-                <constraint firstAttribute="bottom" secondItem="bi7-at-yRv" secondAttribute="bottom" id="wrQ-lj-GfB"/>
+                <constraint firstAttribute="bottom" secondItem="qHY-Yy-yOO" secondAttribute="bottom" id="BlK-3F-ihH"/>
+                <constraint firstAttribute="trailing" secondItem="qHY-Yy-yOO" secondAttribute="trailing" id="c8L-hk-XVL"/>
+                <constraint firstItem="qHY-Yy-yOO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gnl-lb-Zn6"/>
+                <constraint firstItem="qHY-Yy-yOO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yto-wI-10x"/>
             </constraints>
+            <size key="customSize" width="406" height="144"/>
             <connections>
-                <outlet property="descriptionCell" destination="bi7-at-yRv" id="mnn-Du-IhF"/>
+                <outlet property="descriptionCell" destination="qHY-Yy-yOO" id="N7z-56-vLK"/>
             </connections>
-            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+            <point key="canvasLocation" x="154.19847328244273" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BuyButtonCell" customModule="EventLocator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0C9-3q-Cze">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Ticket" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCp-wF-pNb">
+                                <rect key="frame" x="150.66666666666666" y="14" width="85" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BvB-gV-xaG"/>
+                                    <constraint firstAttribute="width" constant="85" id="bkG-Yf-7dg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="appPurple"/>
+                        <constraints>
+                            <constraint firstItem="FCp-wF-pNb" firstAttribute="centerX" secondItem="0C9-3q-Cze" secondAttribute="centerX" id="fht-48-Fek"/>
+                            <constraint firstItem="FCp-wF-pNb" firstAttribute="centerY" secondItem="0C9-3q-Cze" secondAttribute="centerY" id="kKZ-mm-xrR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0C9-3q-Cze" secondAttribute="trailing" id="ZjB-LD-bV0"/>
+                <constraint firstItem="0C9-3q-Cze" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="phP-tI-XpC"/>
+                <constraint firstAttribute="bottom" secondItem="0C9-3q-Cze" secondAttribute="bottom" id="v1g-5F-UKC"/>
+                <constraint firstItem="0C9-3q-Cze" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yQB-hs-FHK"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="buyButtonCell" destination="0C9-3q-Cze" id="LO8-ZJ-Vod"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="appPurple">
+            <color red="0.43900001049041748" green="0.39599999785423279" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
