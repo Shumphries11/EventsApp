@@ -2,7 +2,7 @@ import UIKit
 
 class EventsViewController: UIViewController {
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -55,7 +55,7 @@ class EventsViewController: UIViewController {
     }
     
     private func configureEventsDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return nil }
             
@@ -93,17 +93,17 @@ class EventsViewController: UIViewController {
         }
             
             let sections = [
-                Section(type: .eventsHeader, items: [Event()]),
-                Section(type: .eventType, items: [Event(), Event(), Event(), Event(), Event(), Event(), Event()]),
-                Section(type: .eventTitle, items: [Event()]),
-                Section(type: .subTitle, items: [Event()]),
-                Section(type: .infoBox, items: [Event()]),
-                Section(type: .eventTitle, items: [Event()]),
-                Section(type: .eventDescription, items: [Event()]),
-                Section(type: .buyNow, items: [Event()])
+                Section(type: .eventsHeader, items: [Item()]),
+                Section(type: .eventType, items: [Item(), Item(), Item(), Item(), Item(), Item(), Item()]),
+                Section(type: .eventTitle, items: [Item()]),
+                Section(type: .subTitle, items: [Item()]),
+                Section(type: .infoBox, items: [Item()]),
+                Section(type: .eventTitle, items: [Item()]),
+                Section(type: .eventDescription, items: [Item()]),
+                Section(type: .buyNow, items: [Item()])
                 ]
             
-            var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
             snapshot.appendSections(sections)
             sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
             dataSource.apply(snapshot, animatingDifferences: false )

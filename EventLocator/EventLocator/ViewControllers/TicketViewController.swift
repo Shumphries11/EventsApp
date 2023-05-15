@@ -1,7 +1,7 @@
 import UIKit
 
 class TicketViewController: UIViewController {
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -39,7 +39,7 @@ class TicketViewController: UIViewController {
     }
     
     private func setupTicketDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return nil }
             
@@ -55,10 +55,10 @@ class TicketViewController: UIViewController {
           }
         
         let sections = [
-            Section(type: .ticket, items: [Event()])
+            Section(type: .ticket, items: [Item()])
             ]
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections(sections)
         sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
         dataSource.apply(snapshot, animatingDifferences: false )

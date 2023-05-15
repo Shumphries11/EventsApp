@@ -17,6 +17,44 @@
 		8B27E63C2A07DC1C00672F77 /* BuyButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B27E63A2A07DC1C00672F77 /* BuyButtonCell.xib */; };
 		8B27E6402A07E00200672F77 /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E63E2A07E00200672F77 /* TicketCell.swift */; };
 		8B27E6412A07E00200672F77 /* TicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B27E63F2A07E00200672F77 /* TicketCell.xib */; };
+		8B27E64E2A08894B00672F77 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E64D2A08894B00672F77 /* API.swift */; };
+		8B27E6502A0895A800672F77 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E64F2A0895A800672F77 /* EventList.swift */; };
+		8B27E6522A08972400672F77 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6512A08972400672F77 /* Event.swift */; };
+		8B27E6542A08982900672F77 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6532A08982900672F77 /* Image.swift */; };
+		8B27E6562A0898CE00672F77 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6552A0898CE00672F77 /* Sale.swift */; };
+		8B27E6582A08994000672F77 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6572A08994000672F77 /* Date.swift */; };
+		8B27E65A2A0899C100672F77 /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6592A0899C100672F77 /* Classification.swift */; };
+		8B27E65C2A089A4000672F77 /* Promoter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E65B2A089A4000672F77 /* Promoter.swift */; };
+		8B27E65E2A089C1400672F77 /* PriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E65D2A089C1400672F77 /* PriceRange.swift */; };
+		8B27E6602A089C6900672F77 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E65F2A089C6900672F77 /* Product.swift */; };
+		8B27E6622A089CC900672F77 /* Seatmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6612A089CC900672F77 /* Seatmap.swift */; };
+		8B27E6642A089D6300672F77 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6632A089D6300672F77 /* Accessibility.swift */; };
+		8B27E6662A089E4100672F77 /* TicketLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6652A089E4100672F77 /* TicketLimit.swift */; };
+		8B27E6682A089FAC00672F77 /* AgeRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6672A089FAC00672F77 /* AgeRestriction.swift */; };
+		8B27E66A2A08A07100672F77 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6692A08A07100672F77 /* Ticket.swift */; };
+		8B27E66C2A08A08700672F77 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E66B2A08A08700672F77 /* Link.swift */; };
+		8B27E66E2A08A09800672F77 /* Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E66D2A08A09800672F77 /* Embed.swift */; };
+		8B27E6702A08A83400672F77 /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E66F2A08A83400672F77 /* Public.swift */; };
+		8B27E6722A08A8A300672F77 /* Presale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6712A08A8A300672F77 /* Presale.swift */; };
+		8B27E6742A08AB8900672F77 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6732A08AB8900672F77 /* Start.swift */; };
+		8B27E6762A08AC2400672F77 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6752A08AC2400672F77 /* Status.swift */; };
+		8B27E67A2A08AEF900672F77 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6792A08AEF900672F77 /* Genre.swift */; };
+		8B27E6842A08B3EB00672F77 /* SafeTix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6832A08B3EB00672F77 /* SafeTix.swift */; };
+		8B27E6882A08B5F600672F77 /* AttractionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6872A08B5F600672F77 /* AttractionLink.swift */; };
+		8B27E68C2A09CD2100672F77 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E68B2A09CD2100672F77 /* Venue.swift */; };
+		8B27E68E2A09CEC100672F77 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E68D2A09CEC100672F77 /* City.swift */; };
+		8B27E6902A0BAD9400672F77 /* StateUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E68F2A0BAD9400672F77 /* StateUS.swift */; };
+		8B27E6922A0BADF000672F77 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6912A0BADF000672F77 /* Country.swift */; };
+		8B27E6942A0BAE7300672F77 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6932A0BAE7300672F77 /* Address.swift */; };
+		8B27E6962A0BAEE100672F77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6952A0BAEE100672F77 /* Location.swift */; };
+		8B27E69A2A0BB6AA00672F77 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6992A0BB6AA00672F77 /* Market.swift */; };
+		8B27E69C2A0BB72B00672F77 /* DMAS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E69B2A0BB72B00672F77 /* DMAS.swift */; };
+		8B27E69F2A0D01DA00672F77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E69E2A0D01DA00672F77 /* HomeViewModel.swift */; };
+		8B27E6A12A128DB000672F77 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6A02A128DB000672F77 /* Social.swift */; };
+		8B27E6A32A129E3600672F77 /* TwitterHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6A22A129E3600672F77 /* TwitterHandle.swift */; };
+		8B27E6A52A129ECB00672F77 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6A42A129ECB00672F77 /* BoxOffice.swift */; };
+		8B27E6A72A12CAA300672F77 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6A62A12CAA300672F77 /* Info.swift */; };
+		8B27E6A92A12CB5E00672F77 /* UpcomingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E6A82A12CB5E00672F77 /* UpcomingEvents.swift */; };
 		8B36301B2A07BB7D006EE83A /* DetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3630192A07BB7D006EE83A /* DetailTitleCell.swift */; };
 		8B36301C2A07BB7D006EE83A /* DetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B36301A2A07BB7D006EE83A /* DetailTitleCell.xib */; };
 		8B42969229EE318000136ED9 /* EventsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42969029EE318000136ED9 /* EventsHeaderCell.swift */; };
@@ -56,7 +94,7 @@
 		8B89902129DC32B60045101F /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89901929DC32B60045101F /* NearbyCell.swift */; };
 		8B89902229DC32B60045101F /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89901A29DC32B60045101F /* HomeHeaderCell.swift */; };
 		8B89902329DC32B60045101F /* NearbyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B89901B29DC32B60045101F /* NearbyCell.xib */; };
-		8B89902729DC32C70045101F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89902529DC32C70045101F /* Event.swift */; };
+		8B89902729DC32C70045101F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89902529DC32C70045101F /* Item.swift */; };
 		8B89902829DC32C70045101F /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89902629DC32C70045101F /* Section.swift */; };
 		8B89902B29DC33210045101F /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89902A29DC33210045101F /* Bundle.swift */; };
 		8B89902D29DC332B0045101F /* RegisterableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89902C29DC332B0045101F /* RegisterableView.swift */; };
@@ -80,6 +118,44 @@
 		8B27E63A2A07DC1C00672F77 /* BuyButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyButtonCell.xib; sourceTree = "<group>"; };
 		8B27E63E2A07E00200672F77 /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
 		8B27E63F2A07E00200672F77 /* TicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketCell.xib; sourceTree = "<group>"; };
+		8B27E64D2A08894B00672F77 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8B27E64F2A0895A800672F77 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		8B27E6512A08972400672F77 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8B27E6532A08982900672F77 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		8B27E6552A0898CE00672F77 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		8B27E6572A08994000672F77 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		8B27E6592A0899C100672F77 /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
+		8B27E65B2A089A4000672F77 /* Promoter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promoter.swift; sourceTree = "<group>"; };
+		8B27E65D2A089C1400672F77 /* PriceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRange.swift; sourceTree = "<group>"; };
+		8B27E65F2A089C6900672F77 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		8B27E6612A089CC900672F77 /* Seatmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seatmap.swift; sourceTree = "<group>"; };
+		8B27E6632A089D6300672F77 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		8B27E6652A089E4100672F77 /* TicketLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketLimit.swift; sourceTree = "<group>"; };
+		8B27E6672A089FAC00672F77 /* AgeRestriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRestriction.swift; sourceTree = "<group>"; };
+		8B27E6692A08A07100672F77 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		8B27E66B2A08A08700672F77 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		8B27E66D2A08A09800672F77 /* Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embed.swift; sourceTree = "<group>"; };
+		8B27E66F2A08A83400672F77 /* Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
+		8B27E6712A08A8A300672F77 /* Presale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presale.swift; sourceTree = "<group>"; };
+		8B27E6732A08AB8900672F77 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		8B27E6752A08AC2400672F77 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		8B27E6792A08AEF900672F77 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		8B27E6832A08B3EB00672F77 /* SafeTix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTix.swift; sourceTree = "<group>"; };
+		8B27E6872A08B5F600672F77 /* AttractionLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionLink.swift; sourceTree = "<group>"; };
+		8B27E68B2A09CD2100672F77 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		8B27E68D2A09CEC100672F77 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		8B27E68F2A0BAD9400672F77 /* StateUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateUS.swift; sourceTree = "<group>"; };
+		8B27E6912A0BADF000672F77 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		8B27E6932A0BAE7300672F77 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8B27E6952A0BAEE100672F77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8B27E6992A0BB6AA00672F77 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		8B27E69B2A0BB72B00672F77 /* DMAS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAS.swift; sourceTree = "<group>"; };
+		8B27E69E2A0D01DA00672F77 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8B27E6A02A128DB000672F77 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		8B27E6A22A129E3600672F77 /* TwitterHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterHandle.swift; sourceTree = "<group>"; };
+		8B27E6A42A129ECB00672F77 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
+		8B27E6A62A12CAA300672F77 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		8B27E6A82A12CB5E00672F77 /* UpcomingEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEvents.swift; sourceTree = "<group>"; };
 		8B3630192A07BB7D006EE83A /* DetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleCell.swift; sourceTree = "<group>"; };
 		8B36301A2A07BB7D006EE83A /* DetailTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTitleCell.xib; sourceTree = "<group>"; };
 		8B42969029EE318000136ED9 /* EventsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHeaderCell.swift; sourceTree = "<group>"; };
@@ -121,7 +197,7 @@
 		8B89901929DC32B60045101F /* NearbyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
 		8B89901A29DC32B60045101F /* HomeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		8B89901B29DC32B60045101F /* NearbyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyCell.xib; sourceTree = "<group>"; };
-		8B89902529DC32C70045101F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8B89902529DC32C70045101F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8B89902629DC32C70045101F /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		8B89902A29DC33210045101F /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		8B89902C29DC332B0045101F /* RegisterableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterableView.swift; sourceTree = "<group>"; };
@@ -171,6 +247,22 @@
 				8B27E63F2A07E00200672F77 /* TicketCell.xib */,
 			);
 			path = TicketCells;
+			sourceTree = "<group>";
+		};
+		8B27E64C2A08890600672F77 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				8B27E64D2A08894B00672F77 /* API.swift */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		8B27E69D2A0D019300672F77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B27E69E2A0D01DA00672F77 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8B42969829F6F52000136ED9 /* HomeCells */ = {
@@ -228,9 +320,11 @@
 		8B898FEF29DC30FF0045101F /* EventLocator */ = {
 			isa = PBXGroup;
 			children = (
+				8B27E64C2A08890600672F77 /* API Client */,
 				8B89902929DC32FC0045101F /* Utilities */,
 				8B89902429DC32C70045101F /* Models */,
 				8B89901329DC32B60045101F /* Cells */,
+				8B27E69D2A0D019300672F77 /* ViewModel */,
 				8B89900529DC31A70045101F /* ViewControllers */,
 				8B89900429DC31610045101F /* Storyboards */,
 				8B89900629DC31CC0045101F /* App */,
@@ -288,7 +382,43 @@
 			isa = PBXGroup;
 			children = (
 				8B89902629DC32C70045101F /* Section.swift */,
-				8B89902529DC32C70045101F /* Event.swift */,
+				8B89902529DC32C70045101F /* Item.swift */,
+				8B27E64F2A0895A800672F77 /* EventList.swift */,
+				8B27E6512A08972400672F77 /* Event.swift */,
+				8B27E6532A08982900672F77 /* Image.swift */,
+				8B27E6552A0898CE00672F77 /* Sale.swift */,
+				8B27E6572A08994000672F77 /* Date.swift */,
+				8B27E6592A0899C100672F77 /* Classification.swift */,
+				8B27E65B2A089A4000672F77 /* Promoter.swift */,
+				8B27E65D2A089C1400672F77 /* PriceRange.swift */,
+				8B27E65F2A089C6900672F77 /* Product.swift */,
+				8B27E6612A089CC900672F77 /* Seatmap.swift */,
+				8B27E6632A089D6300672F77 /* Accessibility.swift */,
+				8B27E6652A089E4100672F77 /* TicketLimit.swift */,
+				8B27E6672A089FAC00672F77 /* AgeRestriction.swift */,
+				8B27E6692A08A07100672F77 /* Ticket.swift */,
+				8B27E66B2A08A08700672F77 /* Link.swift */,
+				8B27E66D2A08A09800672F77 /* Embed.swift */,
+				8B27E66F2A08A83400672F77 /* Public.swift */,
+				8B27E6712A08A8A300672F77 /* Presale.swift */,
+				8B27E6732A08AB8900672F77 /* Start.swift */,
+				8B27E6752A08AC2400672F77 /* Status.swift */,
+				8B27E6792A08AEF900672F77 /* Genre.swift */,
+				8B27E6832A08B3EB00672F77 /* SafeTix.swift */,
+				8B27E6872A08B5F600672F77 /* AttractionLink.swift */,
+				8B27E68B2A09CD2100672F77 /* Venue.swift */,
+				8B27E68D2A09CEC100672F77 /* City.swift */,
+				8B27E68F2A0BAD9400672F77 /* StateUS.swift */,
+				8B27E6912A0BADF000672F77 /* Country.swift */,
+				8B27E6932A0BAE7300672F77 /* Address.swift */,
+				8B27E6952A0BAEE100672F77 /* Location.swift */,
+				8B27E6992A0BB6AA00672F77 /* Market.swift */,
+				8B27E69B2A0BB72B00672F77 /* DMAS.swift */,
+				8B27E6A02A128DB000672F77 /* Social.swift */,
+				8B27E6A22A129E3600672F77 /* TwitterHandle.swift */,
+				8B27E6A42A129ECB00672F77 /* BoxOffice.swift */,
+				8B27E6A62A12CAA300672F77 /* Info.swift */,
+				8B27E6A82A12CB5E00672F77 /* UpcomingEvents.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,41 +532,79 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B27E66C2A08A08700672F77 /* Link.swift in Sources */,
 				8B89903129DC334C0045101F /* UICollectionView+Extension.swift in Sources */,
 				8B4296A329F6FDFC00136ED9 /* InfoBoxCell.swift in Sources */,
+				8B27E6A32A129E3600672F77 /* TwitterHandle.swift in Sources */,
+				8B27E6602A089C6900672F77 /* Product.swift in Sources */,
+				8B27E6882A08B5F600672F77 /* AttractionLink.swift in Sources */,
 				8B42969F29F6F81A00136ED9 /* EventTitleCell.swift in Sources */,
+				8B27E6642A089D6300672F77 /* Accessibility.swift in Sources */,
 				8B36301B2A07BB7D006EE83A /* DetailTitleCell.swift in Sources */,
 				8B42969B29F6F55300136ED9 /* SubTitleCell.swift in Sources */,
+				8B27E6A92A12CB5E00672F77 /* UpcomingEvents.swift in Sources */,
 				8B898FF529DC30FF0045101F /* HomeViewController.swift in Sources */,
+				8B27E6522A08972400672F77 /* Event.swift in Sources */,
 				8B42969629EE38C000136ED9 /* EventTypeCell.swift in Sources */,
 				8B89902B29DC33210045101F /* Bundle.swift in Sources */,
+				8B27E6742A08AB8900672F77 /* Start.swift in Sources */,
 				8B89902F29DC33380045101F /* SelfConfiguringCell.swift in Sources */,
-				8B89902729DC32C70045101F /* Event.swift in Sources */,
+				8B89902729DC32C70045101F /* Item.swift in Sources */,
 				8B89902129DC32B60045101F /* NearbyCell.swift in Sources */,
+				8B27E6A12A128DB000672F77 /* Social.swift in Sources */,
 				8B898FF129DC30FF0045101F /* AppDelegate.swift in Sources */,
+				8B27E6682A089FAC00672F77 /* AgeRestriction.swift in Sources */,
+				8B27E6582A08994000672F77 /* Date.swift in Sources */,
 				8B27E62F2A07BF8300672F77 /* DetailDescriptCell.swift in Sources */,
 				8B27E6372A07D82300672F77 /* DetailMapCell.swift in Sources */,
+				8B27E6842A08B3EB00672F77 /* SafeTix.swift in Sources */,
 				8B4296A929F708CD00136ED9 /* DescriptionCell.swift in Sources */,
+				8B27E65C2A089A4000672F77 /* Promoter.swift in Sources */,
 				8B27E6332A07C62300672F77 /* DetailInfoCell.swift in Sources */,
+				8B27E6902A0BAD9400672F77 /* StateUS.swift in Sources */,
+				8B27E69A2A0BB6AA00672F77 /* Market.swift in Sources */,
+				8B27E6702A08A83400672F77 /* Public.swift in Sources */,
+				8B27E6502A0895A800672F77 /* EventList.swift in Sources */,
+				8B27E6622A089CC900672F77 /* Seatmap.swift in Sources */,
+				8B27E6942A0BAE7300672F77 /* Address.swift in Sources */,
+				8B27E6562A0898CE00672F77 /* Sale.swift in Sources */,
 				8B27E63B2A07DC1C00672F77 /* BuyButtonCell.swift in Sources */,
+				8B27E6542A08982900672F77 /* Image.swift in Sources */,
 				8B27E6402A07E00200672F77 /* TicketCell.swift in Sources */,
+				8B27E68C2A09CD2100672F77 /* Venue.swift in Sources */,
+				8B27E65A2A0899C100672F77 /* Classification.swift in Sources */,
 				8B42969229EE318000136ED9 /* EventsHeaderCell.swift in Sources */,
 				8B89902229DC32B60045101F /* HomeHeaderCell.swift in Sources */,
 				8B89901229DC32610045101F /* TicketViewController.swift in Sources */,
+				8B27E6662A089E4100672F77 /* TicketLimit.swift in Sources */,
 				8B89902D29DC332B0045101F /* RegisterableView.swift in Sources */,
 				8B89903329DC335C0045101F /* UIView + Extensions.swift in Sources */,
 				8B43006929F75759004A8BE0 /* DetailImageCell.swift in Sources */,
+				8B27E67A2A08AEF900672F77 /* Genre.swift in Sources */,
 				8B89903729DC338F0045101F /* URL+Extension.swift in Sources */,
+				8B27E6A52A129ECB00672F77 /* BoxOffice.swift in Sources */,
+				8B27E66A2A08A07100672F77 /* Ticket.swift in Sources */,
 				8B89903529DC336B0045101F /* LayoutSection.swift in Sources */,
 				8B898FF329DC30FF0045101F /* SceneDelegate.swift in Sources */,
 				8B89900E29DC323F0045101F /* DetailViewController.swift in Sources */,
+				8B27E69F2A0D01DA00672F77 /* HomeViewModel.swift in Sources */,
 				8B89903929DC339B0045101F /* Utils.swift in Sources */,
+				8B27E6922A0BADF000672F77 /* Country.swift in Sources */,
+				8B27E6A72A12CAA300672F77 /* Info.swift in Sources */,
 				8B89902029DC32B60045101F /* FeaturedCell.swift in Sources */,
 				8B89903B29DC33DC0045101F /* MainTabBarController.swift in Sources */,
+				8B27E6962A0BAEE100672F77 /* Location.swift in Sources */,
+				8B27E68E2A09CEC100672F77 /* City.swift in Sources */,
 				8B89902829DC32C70045101F /* Section.swift in Sources */,
+				8B27E69C2A0BB72B00672F77 /* DMAS.swift in Sources */,
 				8B89901E29DC32B60045101F /* SectionTitleCell.swift in Sources */,
+				8B27E6722A08A8A300672F77 /* Presale.swift in Sources */,
+				8B27E66E2A08A09800672F77 /* Embed.swift in Sources */,
+				8B27E6762A08AC2400672F77 /* Status.swift in Sources */,
 				8B89901029DC32520045101F /* EventsViewController.swift in Sources */,
+				8B27E64E2A08894B00672F77 /* API.swift in Sources */,
 				8B4296AD29F71FB800136ED9 /* BuyNowCell.swift in Sources */,
+				8B27E65E2A089C1400672F77 /* PriceRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

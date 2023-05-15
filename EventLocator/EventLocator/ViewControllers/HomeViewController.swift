@@ -1,13 +1,20 @@
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var viewModel: HomeViewModel!
+    private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+        setupViewModel()
+        bindViewModel()
+        setupData()
     }
     
     lazy var collectionViewLayout: UICollectionViewLayout = {
@@ -34,6 +41,24 @@ class HomeViewController: UIViewController {
         setupDataSource()
     }
     
+    private func bindViewModel() {
+        viewModel.$results
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] results in
+                self?.collectionView.reloadData()
+                dump(results)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func setupData(){
+        viewModel.fetchEvents()
+    }
+    
+    private func setupViewModel() {
+        viewModel = HomeViewModel()
+    }
+    
     private func setupCollectionView() {
         collectionView.contentInsetAdjustmentBehavior = .never
         let cells: [RegisterableView] = [
@@ -48,7 +73,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return nil }
             
@@ -74,14 +99,14 @@ class HomeViewController: UIViewController {
         }
             
             let sections = [
-                Section(type: .homeHeader, items: [Event()]),
-                Section(type: .sectionTitle, items: [Event()]),
-                Section(type: .nearYou, items: [Event(), Event(), Event()]),
-                Section(type: .sectionTitle, items: [Event()]),
-                Section(type: .featured, items: [Event(), Event(), Event()])
+                Section(type: .homeHeader, items: [Item()]),
+                Section(type: .sectionTitle, items: [Item()]),
+                Section(type: .nearYou, items: [Item(), Item(), Item()]),
+                Section(type: .sectionTitle, items: [Item()]),
+                Section(type: .featured, items: [Item(), Item(), Item()])
                 ]
             
-            var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
             snapshot.appendSections(sections)
             sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
             dataSource.apply(snapshot, animatingDifferences: false )

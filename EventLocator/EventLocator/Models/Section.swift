@@ -6,9 +6,9 @@ struct Section: Hashable {
     let type: SectionType
     let title: String
     let subtitle: String
-    let items: [Event]
+    let items: [Item]
     
-    init(type: SectionType, title: String = "", subtitle: String = "", items:[Event] = []) {
+    init(type: SectionType, title: String = "", subtitle: String = "", items:[Item] = []) {
         self.type = type
         self.title = title
         self.subtitle = subtitle

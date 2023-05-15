@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -49,7 +49,7 @@ class DetailViewController: UIViewController {
     }
     
     private func configureDetailDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return nil }
             
@@ -80,15 +80,15 @@ class DetailViewController: UIViewController {
           }
         
         let sections = [
-            Section(type: .detailImage, items: [Event()]),
-            Section(type: .detailTitle, items: [Event()]),
-            Section(type: .detailDescription, items: [Event()]),
-            Section(type: .detailInfo, items: [Event()]),
-            Section(type: .locationPin, items: [Event()]),
-            Section(type: .buyButton, items: [Event()])
+            Section(type: .detailImage, items: [Item()]),
+            Section(type: .detailTitle, items: [Item()]),
+            Section(type: .detailDescription, items: [Item()]),
+            Section(type: .detailInfo, items: [Item()]),
+            Section(type: .locationPin, items: [Item()]),
+            Section(type: .buyButton, items: [Item()])
             ]
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections(sections)
         sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
         dataSource.apply(snapshot, animatingDifferences: false )
