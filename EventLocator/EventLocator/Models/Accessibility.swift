@@ -1,5 +1,5 @@
 import Foundation
 
 struct Accessibility: Codable, Hashable {
-    let ticketLimit: Int
+    let ticketLimit: Int?
 }

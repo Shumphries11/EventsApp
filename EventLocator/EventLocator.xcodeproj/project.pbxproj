@@ -74,6 +74,9 @@
 		8B4296AE29F71FB800136ED9 /* BuyNowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4296AC29F71FB800136ED9 /* BuyNowCell.xib */; };
 		8B43006929F75759004A8BE0 /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43006729F75759004A8BE0 /* DetailImageCell.swift */; };
 		8B43006A29F75759004A8BE0 /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B43006829F75759004A8BE0 /* DetailImageCell.xib */; };
+		8B461AF12A184CAB00E1D3C3 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B461AF02A184CAB00E1D3C3 /* Attraction.swift */; };
+		8B461AF32A184CD400E1D3C3 /* ExternalLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B461AF22A184CD300E1D3C3 /* ExternalLink.swift */; };
+		8B461AF52A184D7A00E1D3C3 /* UrlLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B461AF42A184D7A00E1D3C3 /* UrlLink.swift */; };
 		8B898FF129DC30FF0045101F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B898FF029DC30FF0045101F /* AppDelegate.swift */; };
 		8B898FF329DC30FF0045101F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B898FF229DC30FF0045101F /* SceneDelegate.swift */; };
 		8B898FF529DC30FF0045101F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B898FF429DC30FF0045101F /* HomeViewController.swift */; };
@@ -175,6 +178,9 @@
 		8B4296AC29F71FB800136ED9 /* BuyNowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyNowCell.xib; sourceTree = "<group>"; };
 		8B43006729F75759004A8BE0 /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
 		8B43006829F75759004A8BE0 /* DetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageCell.xib; sourceTree = "<group>"; };
+		8B461AF02A184CAB00E1D3C3 /* Attraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		8B461AF22A184CD300E1D3C3 /* ExternalLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalLink.swift; sourceTree = "<group>"; };
+		8B461AF42A184D7A00E1D3C3 /* UrlLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlLink.swift; sourceTree = "<group>"; };
 		8B898FED29DC30FF0045101F /* EventLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B898FF029DC30FF0045101F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B898FF229DC30FF0045101F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -407,6 +413,8 @@
 				8B27E6832A08B3EB00672F77 /* SafeTix.swift */,
 				8B27E6872A08B5F600672F77 /* AttractionLink.swift */,
 				8B27E68B2A09CD2100672F77 /* Venue.swift */,
+				8B461AF02A184CAB00E1D3C3 /* Attraction.swift */,
+				8B461AF22A184CD300E1D3C3 /* ExternalLink.swift */,
 				8B27E68D2A09CEC100672F77 /* City.swift */,
 				8B27E68F2A0BAD9400672F77 /* StateUS.swift */,
 				8B27E6912A0BADF000672F77 /* Country.swift */,
@@ -418,6 +426,7 @@
 				8B27E6A22A129E3600672F77 /* TwitterHandle.swift */,
 				8B27E6A42A129ECB00672F77 /* BoxOffice.swift */,
 				8B27E6A62A12CAA300672F77 /* Info.swift */,
+				8B461AF42A184D7A00E1D3C3 /* UrlLink.swift */,
 				8B27E6A82A12CB5E00672F77 /* UpcomingEvents.swift */,
 			);
 			path = Models;
@@ -569,6 +578,7 @@
 				8B27E6942A0BAE7300672F77 /* Address.swift in Sources */,
 				8B27E6562A0898CE00672F77 /* Sale.swift in Sources */,
 				8B27E63B2A07DC1C00672F77 /* BuyButtonCell.swift in Sources */,
+				8B461AF52A184D7A00E1D3C3 /* UrlLink.swift in Sources */,
 				8B27E6542A08982900672F77 /* Image.swift in Sources */,
 				8B27E6402A07E00200672F77 /* TicketCell.swift in Sources */,
 				8B27E68C2A09CD2100672F77 /* Venue.swift in Sources */,
@@ -588,6 +598,7 @@
 				8B898FF329DC30FF0045101F /* SceneDelegate.swift in Sources */,
 				8B89900E29DC323F0045101F /* DetailViewController.swift in Sources */,
 				8B27E69F2A0D01DA00672F77 /* HomeViewModel.swift in Sources */,
+				8B461AF12A184CAB00E1D3C3 /* Attraction.swift in Sources */,
 				8B89903929DC339B0045101F /* Utils.swift in Sources */,
 				8B27E6922A0BADF000672F77 /* Country.swift in Sources */,
 				8B27E6A72A12CAA300672F77 /* Info.swift in Sources */,
@@ -598,6 +609,7 @@
 				8B89902829DC32C70045101F /* Section.swift in Sources */,
 				8B27E69C2A0BB72B00672F77 /* DMAS.swift in Sources */,
 				8B89901E29DC32B60045101F /* SectionTitleCell.swift in Sources */,
+				8B461AF32A184CD400E1D3C3 /* ExternalLink.swift in Sources */,
 				8B27E6722A08A8A300672F77 /* Presale.swift in Sources */,
 				8B27E66E2A08A09800672F77 /* Embed.swift in Sources */,
 				8B27E6762A08AC2400672F77 /* Status.swift in Sources */,

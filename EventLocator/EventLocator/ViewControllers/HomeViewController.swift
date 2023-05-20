@@ -12,9 +12,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-        setupViewModel()
-        bindViewModel()
-        setupData()
     }
     
     lazy var collectionViewLayout: UICollectionViewLayout = {
@@ -39,6 +36,9 @@ class HomeViewController: UIViewController {
     private func initialize() {
         setupCollectionView()
         setupDataSource()
+        setupViewModel()
+        bindViewModel()
+        setupData()
     }
     
     private func bindViewModel() {

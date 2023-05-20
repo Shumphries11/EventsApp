@@ -1,5 +1,5 @@
 import Foundation
 
 struct AgeRestriction: Codable, Hashable {
-    let legalAgeEnforced: Bool
+    let legalAgeEnforced: Bool?
 }
