@@ -1,6 +1,7 @@
 import UIKit
 
-class EventsViewController: UIViewController {
+class EventsViewController: UIViewController, Storyboarded {
+    var coordinator: EventsCoordinator?
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
@@ -50,7 +51,7 @@ class EventsViewController: UIViewController {
             
         ]
         collectionView.register(cells: cells)
-        collectionView.delegate = self
+//        collectionView.delegate = self
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
@@ -110,11 +111,11 @@ class EventsViewController: UIViewController {
         }
 }
 
-extension EventsViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-}
+//extension EventsViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//}
 

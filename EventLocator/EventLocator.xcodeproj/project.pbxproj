@@ -110,6 +110,14 @@
 		8B89903B29DC33DC0045101F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89903A29DC33DC0045101F /* MainTabBarController.swift */; };
 		8BC31F622A1A490F0071C6B6 /* Suggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F612A1A490F0071C6B6 /* Suggest.swift */; };
 		8BC31F642A1A49EB0071C6B6 /* NewEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F632A1A49EB0071C6B6 /* NewEmbed.swift */; };
+		8BC31F672A1BE5E90071C6B6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F662A1BE5E90071C6B6 /* Storyboarded.swift */; };
+		8BC31F692A1BE5F10071C6B6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F682A1BE5F10071C6B6 /* AppCoordinator.swift */; };
+		8BC31F6B2A1BE5FD0071C6B6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F6A2A1BE5FD0071C6B6 /* Coordinator.swift */; };
+		8BC31F6D2A1BE6160071C6B6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F6C2A1BE6160071C6B6 /* MainCoordinator.swift */; };
+		8BC31F6F2A1BE8680071C6B6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F6E2A1BE8670071C6B6 /* HomeCoordinator.swift */; };
+		8BC31F712A1BE8CF0071C6B6 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F702A1BE8CF0071C6B6 /* EventsCoordinator.swift */; };
+		8BC31F732A1BE9510071C6B6 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F722A1BE9510071C6B6 /* DetailCoordinator.swift */; };
+		8BC31F752A1BE9A60071C6B6 /* TicketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F742A1BE9A60071C6B6 /* TicketCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +226,14 @@
 		8B89903A29DC33DC0045101F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8BC31F612A1A490F0071C6B6 /* Suggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest.swift; sourceTree = "<group>"; };
 		8BC31F632A1A49EB0071C6B6 /* NewEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEmbed.swift; sourceTree = "<group>"; };
+		8BC31F662A1BE5E90071C6B6 /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8BC31F682A1BE5F10071C6B6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F6A2A1BE5FD0071C6B6 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8BC31F6C2A1BE6160071C6B6 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F6E2A1BE8670071C6B6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F702A1BE8CF0071C6B6 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F722A1BE9510071C6B6 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F742A1BE9A60071C6B6 /* TicketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +346,7 @@
 		8B898FEF29DC30FF0045101F /* EventLocator */ = {
 			isa = PBXGroup;
 			children = (
+				8BC31F652A1BE5C80071C6B6 /* Coordinators */,
 				8B27E64C2A08890600672F77 /* API Client */,
 				8B89902929DC32FC0045101F /* Utilities */,
 				8B89902429DC32C70045101F /* Models */,
@@ -454,6 +471,21 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		8BC31F652A1BE5C80071C6B6 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				8BC31F662A1BE5E90071C6B6 /* Storyboarded.swift */,
+				8BC31F6A2A1BE5FD0071C6B6 /* Coordinator.swift */,
+				8BC31F6C2A1BE6160071C6B6 /* MainCoordinator.swift */,
+				8BC31F682A1BE5F10071C6B6 /* AppCoordinator.swift */,
+				8BC31F6E2A1BE8670071C6B6 /* HomeCoordinator.swift */,
+				8BC31F702A1BE8CF0071C6B6 /* EventsCoordinator.swift */,
+				8BC31F722A1BE9510071C6B6 /* DetailCoordinator.swift */,
+				8BC31F742A1BE9A60071C6B6 /* TicketCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC31F752A1BE9A60071C6B6 /* TicketCoordinator.swift in Sources */,
 				8B27E66C2A08A08700672F77 /* Link.swift in Sources */,
 				8B89903129DC334C0045101F /* UICollectionView+Extension.swift in Sources */,
 				8B4296A329F6FDFC00136ED9 /* InfoBoxCell.swift in Sources */,
@@ -555,6 +588,7 @@
 				8B27E6882A08B5F600672F77 /* AttractionLink.swift in Sources */,
 				8B42969F29F6F81A00136ED9 /* EventTitleCell.swift in Sources */,
 				8B27E6642A089D6300672F77 /* Accessibility.swift in Sources */,
+				8BC31F672A1BE5E90071C6B6 /* Storyboarded.swift in Sources */,
 				8B36301B2A07BB7D006EE83A /* DetailTitleCell.swift in Sources */,
 				8B42969B29F6F55300136ED9 /* SubTitleCell.swift in Sources */,
 				8B27E6A92A12CB5E00672F77 /* UpcomingEvents.swift in Sources */,
@@ -581,6 +615,8 @@
 				8B27E6702A08A83400672F77 /* Public.swift in Sources */,
 				8B27E6502A0895A800672F77 /* EventList.swift in Sources */,
 				8B27E6622A089CC900672F77 /* Seatmap.swift in Sources */,
+				8BC31F6D2A1BE6160071C6B6 /* MainCoordinator.swift in Sources */,
+				8BC31F6B2A1BE5FD0071C6B6 /* Coordinator.swift in Sources */,
 				8B27E6942A0BAE7300672F77 /* Address.swift in Sources */,
 				8B27E6562A0898CE00672F77 /* Sale.swift in Sources */,
 				8B27E63B2A07DC1C00672F77 /* BuyButtonCell.swift in Sources */,
@@ -595,15 +631,19 @@
 				8B27E6662A089E4100672F77 /* TicketLimit.swift in Sources */,
 				8B89902D29DC332B0045101F /* RegisterableView.swift in Sources */,
 				8B89903329DC335C0045101F /* UIView + Extensions.swift in Sources */,
+				8BC31F712A1BE8CF0071C6B6 /* EventsCoordinator.swift in Sources */,
 				8B43006929F75759004A8BE0 /* DetailImageCell.swift in Sources */,
 				8B27E67A2A08AEF900672F77 /* Genre.swift in Sources */,
 				8B89903729DC338F0045101F /* URL+Extension.swift in Sources */,
+				8BC31F692A1BE5F10071C6B6 /* AppCoordinator.swift in Sources */,
 				8B27E6A52A129ECB00672F77 /* BoxOffice.swift in Sources */,
+				8BC31F6F2A1BE8680071C6B6 /* HomeCoordinator.swift in Sources */,
 				8B27E66A2A08A07100672F77 /* Ticket.swift in Sources */,
 				8B89903529DC336B0045101F /* LayoutSection.swift in Sources */,
 				8B898FF329DC30FF0045101F /* SceneDelegate.swift in Sources */,
 				8B89900E29DC323F0045101F /* DetailViewController.swift in Sources */,
 				8B27E69F2A0D01DA00672F77 /* HomeViewModel.swift in Sources */,
+				8BC31F732A1BE9510071C6B6 /* DetailCoordinator.swift in Sources */,
 				8B461AF12A184CAB00E1D3C3 /* Attraction.swift in Sources */,
 				8B89903929DC339B0045101F /* Utils.swift in Sources */,
 				8B27E6922A0BADF000672F77 /* Country.swift in Sources */,

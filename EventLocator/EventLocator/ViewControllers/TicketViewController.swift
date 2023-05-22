@@ -1,6 +1,9 @@
 import UIKit
 
-class TicketViewController: UIViewController {
+class TicketViewController: UIViewController, Storyboarded {
+    
+    var coordinator: TicketCoordinator?
+    
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!

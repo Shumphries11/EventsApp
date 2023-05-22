@@ -61,7 +61,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for Events" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-dw-WAA">
                                         <rect key="frame" x="4" y="0.0" width="386" height="53"/>
                                         <color key="tintColor" name="appPurple"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>

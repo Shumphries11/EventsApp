@@ -1,7 +1,9 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, Storyboarded {
+    var coordinator: HomeCoordinator?
+    
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -78,7 +80,7 @@ class HomeViewController: UIViewController {
             .nib(NearbyCell.self)
         ]
         collectionView.register(cells: cells)
-        collectionView.delegate = self
+//        collectionView.delegate = self
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
@@ -122,12 +124,12 @@ class HomeViewController: UIViewController {
             dataSource.apply(snapshot, animatingDifferences: false )
     }
 }
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Events", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-}
+//extension HomeViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Events", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//}
 
 

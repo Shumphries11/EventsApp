@@ -1,6 +1,9 @@
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, Storyboarded {
+    
+    var coordinator: DetailCoordinator?
+    
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -44,7 +47,7 @@ class DetailViewController: UIViewController {
             .nib(BuyButtonCell.self)
         ]
         collectionView.register(cells: cells)
-        collectionView.delegate = self
+//        collectionView.delegate = self
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
@@ -96,10 +99,10 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Ticket", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-}
+//extension DetailViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Ticket", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//}
