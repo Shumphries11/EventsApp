@@ -8,6 +8,7 @@ class HomeViewController: UIViewController {
     
     private var viewModel: HomeViewModel!
     private var cancellables: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +50,19 @@ class HomeViewController: UIViewController {
                 dump(results)
             }
             .store(in: &cancellables)
+        
+        viewModel.$suggestResults
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] suggestResults in
+                self?.collectionView.reloadData()
+                dump(suggestResults)
+            }
+            .store(in: &subscriptions)
     }
     
     private func setupData(){
         viewModel.fetchEvents()
+        viewModel.fetchSuggestions()
     }
     
     private func setupViewModel() {

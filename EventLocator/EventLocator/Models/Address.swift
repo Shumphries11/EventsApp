@@ -1,5 +1,5 @@
 import Foundation
 
 struct Address: Codable, Hashable {
-    let line1: String
+    let line1: String?
 }

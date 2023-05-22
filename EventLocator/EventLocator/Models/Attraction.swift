@@ -4,12 +4,12 @@ struct Attraction: Codable, Hashable {
     let name: String
     let type: String
     let id: String
-    let url: String
+    let url: String?
     let locale: String
     let externalLinks: ExternalLink?
     let aliases: [String]?
     let images: [Image]
-    let classifications: [Classification]
+    let classifications: [Classification]?
     let upcomingEvents: UpcomingEvents?
     let links: Link
 

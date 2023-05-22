@@ -10,6 +10,7 @@ struct API {
         static let page = "3"
         static let countryCode = "US"
         static let stateCode = "AL"
+        static let radius = "100"
         
     }
     
@@ -31,6 +32,7 @@ struct API {
         static let baseURL = URL(string: "https://app.ticketmaster.com/")!
         
         case events
+        case suggestions
         
         var url: URL {
             switch self {
@@ -42,6 +44,12 @@ struct API {
                     .appending("page", value: API.Constants.page)
                     .appending("countryCode", value: API.Constants.countryCode)
                     .appending("stateCode", value: API.Constants.stateCode)
+            case .suggestions:
+                return EndPoint.baseURL.appendingPathComponent("/discovery/v2/suggest")
+                    .appending("apikey", value: API.Constants.apiKey)
+                    .appending("radius", value: API.Constants.radius)
+                    .appending("locale", value: API.Constants.locale)
+                    .appending("countryCode", value: API.Constants.countryCode)
             }
         }
         
@@ -67,6 +75,24 @@ struct API {
                 switch error {
                 case is URLError:
                     return Error.addressUnreachable(EndPoint.events.url)
+                default: return Error.invalidResponse
+                }
+            }
+            .print()
+            .map(\.embedded.events)
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchSuggestions() -> AnyPublisher<[NewEvent], Error>{
+        
+        URLSession.shared.dataTaskPublisher(for: EndPoint.request(with: EndPoint.suggestions.url))
+            .map(\.data)
+            .decode(type: Suggest.self, decoder: decoder)
+            .print()
+            .mapError { error in
+                switch error {
+                case is URLError:
+                    return Error.addressUnreachable(EndPoint.suggestions.url)
                 default: return Error.invalidResponse
                 }
             }

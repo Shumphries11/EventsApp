@@ -108,6 +108,8 @@
 		8B89903729DC338F0045101F /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89903629DC338F0045101F /* URL+Extension.swift */; };
 		8B89903929DC339B0045101F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89903829DC339B0045101F /* Utils.swift */; };
 		8B89903B29DC33DC0045101F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89903A29DC33DC0045101F /* MainTabBarController.swift */; };
+		8BC31F622A1A490F0071C6B6 /* Suggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F612A1A490F0071C6B6 /* Suggest.swift */; };
+		8BC31F642A1A49EB0071C6B6 /* NewEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F632A1A49EB0071C6B6 /* NewEmbed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +216,8 @@
 		8B89903629DC338F0045101F /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		8B89903829DC339B0045101F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8B89903A29DC33DC0045101F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8BC31F612A1A490F0071C6B6 /* Suggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest.swift; sourceTree = "<group>"; };
+		8BC31F632A1A49EB0071C6B6 /* NewEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEmbed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +432,8 @@
 				8B27E6A62A12CAA300672F77 /* Info.swift */,
 				8B461AF42A184D7A00E1D3C3 /* UrlLink.swift */,
 				8B27E6A82A12CB5E00672F77 /* UpcomingEvents.swift */,
+				8BC31F612A1A490F0071C6B6 /* Suggest.swift */,
+				8BC31F632A1A49EB0071C6B6 /* NewEmbed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				8B461AF12A184CAB00E1D3C3 /* Attraction.swift in Sources */,
 				8B89903929DC339B0045101F /* Utils.swift in Sources */,
 				8B27E6922A0BADF000672F77 /* Country.swift in Sources */,
+				8BC31F642A1A49EB0071C6B6 /* NewEmbed.swift in Sources */,
 				8B27E6A72A12CAA300672F77 /* Info.swift in Sources */,
 				8B89902029DC32B60045101F /* FeaturedCell.swift in Sources */,
 				8B89903B29DC33DC0045101F /* MainTabBarController.swift in Sources */,
@@ -614,6 +621,7 @@
 				8B27E66E2A08A09800672F77 /* Embed.swift in Sources */,
 				8B27E6762A08AC2400672F77 /* Status.swift in Sources */,
 				8B89901029DC32520045101F /* EventsViewController.swift in Sources */,
+				8BC31F622A1A490F0071C6B6 /* Suggest.swift in Sources */,
 				8B27E64E2A08894B00672F77 /* API.swift in Sources */,
 				8B4296AD29F71FB800136ED9 /* BuyNowCell.swift in Sources */,
 				8B27E65E2A089C1400672F77 /* PriceRange.swift in Sources */,
