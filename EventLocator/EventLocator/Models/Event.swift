@@ -5,12 +5,12 @@ struct Event: Codable, Hashable {
     let name: String
     let type: String
     let id: String
-    let test: Bool
-    let url: String
+    let test: Bool?
+    let url: String?
     let locale: String
     let images: [Image]
-    let distance: Double
-    let units: String
+    let distance: Double?
+    let units: String?
     let sales: Sale?
     let dates: Date?
     let clasifications: [Classification]?

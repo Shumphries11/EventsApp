@@ -118,6 +118,8 @@
 		8BC31F712A1BE8CF0071C6B6 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F702A1BE8CF0071C6B6 /* EventsCoordinator.swift */; };
 		8BC31F732A1BE9510071C6B6 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F722A1BE9510071C6B6 /* DetailCoordinator.swift */; };
 		8BC31F752A1BE9A60071C6B6 /* TicketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F742A1BE9A60071C6B6 /* TicketCoordinator.swift */; };
+		8BC31F772A24D0B00071C6B6 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC31F762A24D0B00071C6B6 /* SeeMoreViewController.swift */; };
+		8BC31F792A24D0EB0071C6B6 /* SeeMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC31F782A24D0EB0071C6B6 /* SeeMore.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +236,8 @@
 		8BC31F702A1BE8CF0071C6B6 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		8BC31F722A1BE9510071C6B6 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		8BC31F742A1BE9A60071C6B6 /* TicketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCoordinator.swift; sourceTree = "<group>"; };
+		8BC31F762A24D0B00071C6B6 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
+		8BC31F782A24D0EB0071C6B6 /* SeeMore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SeeMore.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +371,7 @@
 				8B89900929DC31FA0045101F /* Events.storyboard */,
 				8B89900729DC31ED0045101F /* EventDetail.storyboard */,
 				8B89900B29DC32050045101F /* Ticket.storyboard */,
+				8BC31F782A24D0EB0071C6B6 /* SeeMore.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				8B89900F29DC32520045101F /* EventsViewController.swift */,
 				8B89900D29DC323F0045101F /* DetailViewController.swift */,
 				8B89901129DC32610045101F /* TicketViewController.swift */,
+				8BC31F762A24D0B00071C6B6 /* SeeMoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				8B89900A29DC31FA0045101F /* Events.storyboard in Resources */,
 				8B27E63C2A07DC1C00672F77 /* BuyButtonCell.xib in Resources */,
 				8B42969329EE318000136ED9 /* EventsHeaderCell.xib in Resources */,
+				8BC31F792A24D0EB0071C6B6 /* SeeMore.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +613,7 @@
 				8B27E6582A08994000672F77 /* Date.swift in Sources */,
 				8B27E62F2A07BF8300672F77 /* DetailDescriptCell.swift in Sources */,
 				8B27E6372A07D82300672F77 /* DetailMapCell.swift in Sources */,
+				8BC31F772A24D0B00071C6B6 /* SeeMoreViewController.swift in Sources */,
 				8B27E6842A08B3EB00672F77 /* SafeTix.swift in Sources */,
 				8B4296A929F708CD00136ED9 /* DescriptionCell.swift in Sources */,
 				8B27E65C2A089A4000672F77 /* Promoter.swift in Sources */,

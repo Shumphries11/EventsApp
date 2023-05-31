@@ -83,8 +83,7 @@ struct API {
             .eraseToAnyPublisher()
     }
     
-    func fetchSuggestions() -> AnyPublisher<[NewEvent], Error>{
-        
+    func fetchSuggestions() -> AnyPublisher<[Event], Error>{
         URLSession.shared.dataTaskPublisher(for: EndPoint.request(with: EndPoint.suggestions.url))
             .map(\.data)
             .decode(type: Suggest.self, decoder: decoder)

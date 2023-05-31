@@ -13,6 +13,7 @@ class EventsViewController: UIViewController, Storyboarded {
             
             let snapshot = self.dataSource.snapshot()
             let sectionType = snapshot.sectionIdentifiers[sectionIndex].type
+            
             switch sectionType {
             case .eventsHeader: return LayoutSectionFactory.eventsHeader()
             case .eventType: return LayoutSectionFactory.eventType()
@@ -40,6 +41,7 @@ class EventsViewController: UIViewController, Storyboarded {
     
     private func setupEventsCV() {
         collectionView.contentInsetAdjustmentBehavior = .never
+        
         let cells: [RegisterableView] = [
             .nib(EventsHeaderCell.self),
             .nib(EventTypeCell.self),

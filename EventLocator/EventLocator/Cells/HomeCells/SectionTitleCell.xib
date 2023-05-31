@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,23 +30,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chj-W3-NkS">
-                                <rect key="frame" x="312" y="1" width="74" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="see more..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chj-W3-NkS">
+                                <rect key="frame" x="298" y="2" width="74" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="szr-Mn-Z5m"/>
                                     <constraint firstAttribute="width" constant="74" id="xi3-TZ-p5l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="appPurple"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Chj-W3-NkS" firstAttribute="leading" secondItem="dO4-f7-oqJ" secondAttribute="trailing" constant="203" id="3qZ-Xj-dwE"/>
+                            <constraint firstItem="Chj-W3-NkS" firstAttribute="leading" secondItem="dO4-f7-oqJ" secondAttribute="trailing" constant="189" id="3qZ-Xj-dwE"/>
                             <constraint firstItem="dO4-f7-oqJ" firstAttribute="top" secondItem="dih-zx-qU5" secondAttribute="top" id="MYf-Sr-hrL"/>
                             <constraint firstItem="dO4-f7-oqJ" firstAttribute="leading" secondItem="dih-zx-qU5" secondAttribute="leading" id="uFT-JL-MYN"/>
-                            <constraint firstItem="Chj-W3-NkS" firstAttribute="top" secondItem="dih-zx-qU5" secondAttribute="top" constant="1" id="yzl-S2-SiZ"/>
+                            <constraint firstItem="Chj-W3-NkS" firstAttribute="top" secondItem="dih-zx-qU5" secondAttribute="top" constant="2" id="yzl-S2-SiZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -58,9 +59,16 @@
                 <constraint firstItem="dih-zx-qU5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hrQ-7I-TCv"/>
             </constraints>
             <connections>
+                <outlet property="lblSeeMore" destination="Chj-W3-NkS" id="AoF-Rh-aKu"/>
+                <outlet property="lblTitle" destination="dO4-f7-oqJ" id="Ppc-jS-o6U"/>
                 <outlet property="sectionTitleCell" destination="dih-zx-qU5" id="Qbh-gV-9Co"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="appPurple">
+            <color red="0.43900001049041748" green="0.39599999785423279" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

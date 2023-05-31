@@ -3,7 +3,7 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     @Published private(set) var results: [Event] = []
-    @Published private(set) var suggestResults: [NewEvent] = []
+    @Published private(set) var suggestResults: [Event] = []
     private var cancellables: Set<AnyCancellable> = []
     private var subscriptions: Set<AnyCancellable> = []
     private let apiClient: API

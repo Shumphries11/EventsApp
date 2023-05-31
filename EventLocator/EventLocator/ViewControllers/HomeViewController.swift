@@ -80,7 +80,7 @@ class HomeViewController: UIViewController, Storyboarded {
             .nib(NearbyCell.self)
         ]
         collectionView.register(cells: cells)
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
@@ -131,5 +131,15 @@ class HomeViewController: UIViewController, Storyboarded {
 //        navigationController?.pushViewController(vc, animated: true)
 //    }
 //}
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.cellForItem(at: indexPath) is SectionTitleCell {
+            let storyboard: UIStoryboard = UIStoryboard(name: "SeeMore", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SeeMoreViewController") as! SeeMoreViewController
+            navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.navigationBar.tintColor = UIColor(named: "appPurple")
+        }
+    }
+}
 
 
