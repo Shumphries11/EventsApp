@@ -1,10 +1,23 @@
 import UIKit
+import Combine
 
-class DetailViewController: UIViewController, Storyboarded {
+enum SectionC {
+    case detailImage
+    case detailTitle
+    case detailDescription
+    case detailInfo
+    case locationPin
+    case buyButton
+}
+
+class DetailViewController: UIViewController {
+    var event: Event?
+    var id: String?
+    private var viewModel: DetailViewModel!
+    private var cancellables: Set<AnyCancellable> = []
     
-    var coordinator: DetailCoordinator?
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    private var dataSource: UICollectionViewDiffableDataSource<SectionC, Event>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -13,7 +26,8 @@ class DetailViewController: UIViewController, Storyboarded {
             guard let self = self else { return nil }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[sectionIndex].type
+            let sectionType = snapshot.sectionIdentifiers[sectionIndex]
+            
             switch sectionType {
             case .detailImage: return LayoutSectionFactory.detailImage()
             case .detailTitle: return LayoutSectionFactory.detailTitle()
@@ -21,7 +35,6 @@ class DetailViewController: UIViewController, Storyboarded {
             case .detailInfo: return LayoutSectionFactory.detailInfo()
             case .locationPin: return LayoutSectionFactory.locationPin()
             case .buyButton: return LayoutSectionFactory.buyButton()
-            default: return nil
             }
         }
         return layout
@@ -30,11 +43,38 @@ class DetailViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeDV()
+        title = event?.name
     }
     
     private func initializeDV() {
         setupDetailCV()
         configureDetailDataSource()
+        setupViewModel()
+        bindViewModel()
+        setupData()
+    }
+    
+    private func bindViewModel() {
+        viewModel.$details
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] details in
+                if let details = details {
+                    self?.reloadDetailData()
+                    self?.collectionView.reloadData()
+                    dump(details)
+                }
+            }
+            .store(in: &cancellables)
+        
+    }
+    
+    private func setupData(){
+        viewModel?.fetchEventDetails(id: id!)
+        
+    }
+    
+    private func setupViewModel() {
+        viewModel = DetailViewModel()
     }
     
     private func setupDetailCV() {
@@ -47,62 +87,87 @@ class DetailViewController: UIViewController, Storyboarded {
             .nib(BuyButtonCell.self)
         ]
         collectionView.register(cells: cells)
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
     private func configureDetailDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<SectionC, Event>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
-            guard let self = self else { return nil }
+            guard let self = self else { return UICollectionViewCell() }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[indexPath.section].type
+            let sectionType = snapshot.sectionIdentifiers[indexPath.section]
+            
             switch sectionType {
-            case .detailImage:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailImageCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .detailTitle:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailTitleCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .detailDescription:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailDescriptCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .detailInfo:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailInfoCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .locationPin:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailMapCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .buyButton:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BuyButtonCell.reuseIdentifier, for: indexPath)
-                return cell
-            default:
-                  return nil
-              }
-          }
+            case .detailImage: return self.configure(DetailImageCell.self, with: item, for: indexPath)
+            case .detailTitle: return self.configure(DetailTitleCell.self, with: item, for: indexPath)
+            case .detailDescription: return self.configure(DetailDescriptCell.self, with: item, for: indexPath)
+            case .detailInfo: return self.configure(DetailInfoCell.self, with: item, for: indexPath)
+            case .locationPin: return self.configure(DetailMapCell.self, with: item, for: indexPath)
+            case .buyButton: return self.configure(BuyButtonCell.self, with: item, for: indexPath)
+            }
+        }
+    }
         
-        let sections = [
-            Section(type: .detailImage, items: [Item()]),
-            Section(type: .detailTitle, items: [Item()]),
-            Section(type: .detailDescription, items: [Item()]),
-            Section(type: .detailInfo, items: [Item()]),
-            Section(type: .locationPin, items: [Item()]),
-            Section(type: .buyButton, items: [Item()])
-            ]
+        func reloadDetailData() {
+            var snapshot = NSDiffableDataSourceSnapshot<SectionC, Event>()
+            snapshot.appendSections([.detailImage, .detailTitle, .detailDescription, .detailInfo, .locationPin, .buyButton])
+                                     
+            snapshot.appendItems([Event()], toSection: .detailImage)
+            
+            snapshot.appendItems([viewModel.details!], toSection: .detailTitle)
+            
+            var detailDescript = viewModel.details!
+            detailDescript.id = detailDescript.id + ".descript"
+            
+            snapshot.appendItems([detailDescript], toSection: .detailDescription)
+            
+            var detailInfo = viewModel.details!
+            detailInfo.id = detailInfo.id + ".info"
+            
+            snapshot.appendItems([detailInfo], toSection: .detailInfo)
+            
+            var detailLocation = viewModel.details!
+            detailLocation.id = detailLocation.id + ".loctaion"
+            
+            snapshot.appendItems([detailLocation], toSection: .locationPin)
+            
+            var detailBuy = Event()
+            detailBuy.id = ".buy"
+            
+            snapshot.appendItems([detailBuy], toSection: .buyButton)
+
+            dataSource.apply(snapshot, animatingDifferences: false )
+        }
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections(sections)
-        sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
-        dataSource.apply(snapshot, animatingDifferences: false )
+        func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with event: Event, for indexPath: IndexPath) -> T {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+                fatalError("Unable to dequeue \(cellType)")
+            }
+            cell.configure(with: event)
+            return cell
+        }
+    }
+
+
+extension DetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let snapshot = self.dataSource.snapshot()
+        let section = snapshot.sectionIdentifiers[indexPath.section]
+        let storyboard: UIStoryboard = UIStoryboard(name: "Ticket", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
         
+        switch section {
+        case .buyButton:
+            vc.ticketEvent = event
+            vc.ticketId = id!
+            dump(id!)
+            navigationController?.pushViewController(vc, animated: true)
+            return
+       
+        default:
+            return
+        }
     }
 }
-
-//extension DetailViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Ticket", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "TicketViewController") as! TicketViewController
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
-//}

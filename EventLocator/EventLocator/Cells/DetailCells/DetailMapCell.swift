@@ -1,7 +1,7 @@
 import UIKit
 import MapKit
 
-class DetailMapCell: UICollectionViewCell {
+class DetailMapCell: UICollectionViewCell,SelfConfiguringCell {
 
     @IBOutlet weak var detailMapCell: MKMapView!
     
@@ -11,6 +11,10 @@ class DetailMapCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }

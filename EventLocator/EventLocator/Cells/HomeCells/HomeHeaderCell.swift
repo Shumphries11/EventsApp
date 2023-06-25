@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeHeaderCell: UICollectionViewCell {
+class HomeHeaderCell: UICollectionViewCell, SelfConfiguringCell {
     
     static let reuseIdentifier = String(describing: HomeHeaderCell.self)
     static let nib = UINib(nibName: String(describing: HomeHeaderCell.self), bundle: nil)
@@ -22,6 +22,10 @@ class HomeHeaderCell: UICollectionViewCell {
         imageView.image = img
         txtField.leftView = imageView
         txtField.leftViewMode = .always
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }

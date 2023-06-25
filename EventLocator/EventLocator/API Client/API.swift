@@ -33,6 +33,7 @@ struct API {
         
         case events
         case suggestions
+        case eventDetail(String)
         
         var url: URL {
             switch self {
@@ -50,6 +51,9 @@ struct API {
                     .appending("radius", value: API.Constants.radius)
                     .appending("locale", value: API.Constants.locale)
                     .appending("countryCode", value: API.Constants.countryCode)
+            case .eventDetail(let id):
+                return EndPoint.baseURL.appendingPathComponent("/discovery/v2/events/\(id)")
+                    .appending("apikey", value: API.Constants.apiKey)
             }
         }
         
@@ -97,6 +101,23 @@ struct API {
             }
             .print()
             .map(\.embedded.events)
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchEventDetail(id: String) -> AnyPublisher<Event, Error>{
+        URLSession.shared.dataTaskPublisher(for: EndPoint.request(with: EndPoint.eventDetail(id).url))
+            .map(\.data)
+            .decode(type: Event.self, decoder: decoder)
+            .print()
+            .mapError { error in
+                switch error {
+                case is URLError:
+                    return Error.addressUnreachable(EndPoint.eventDetail(id).url)
+                default: return Error.invalidResponse
+                }
+            }
+            .print()
+            //.map(\.self)
             .eraseToAnyPublisher()
     }
 }

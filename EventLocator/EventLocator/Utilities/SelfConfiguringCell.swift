@@ -2,5 +2,5 @@ import Foundation
 
 protocol SelfConfiguringCell {
     static var reuseIdentifier: String { get }
-    func configure(with media: Item)
+    func configure(with event: Event)
 }

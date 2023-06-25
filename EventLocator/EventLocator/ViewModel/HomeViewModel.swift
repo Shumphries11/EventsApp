@@ -2,8 +2,8 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published private(set) var results: [Event] = []
-    @Published private(set) var suggestResults: [Event] = []
+    @Published private(set) var nearYouResults: [Event] = []
+    @Published private(set) var featuredResults: [Event] = []
     private var cancellables: Set<AnyCancellable> = []
     private var subscriptions: Set<AnyCancellable> = []
     private let apiClient: API
@@ -23,7 +23,7 @@ class HomeViewModel: ObservableObject {
                     print("Finished fetching events")
                 }
             }, receiveValue: { [weak self] results in
-                self?.results = results
+                self?.nearYouResults = results
             }).store(in: &cancellables)
     }
     
@@ -38,7 +38,7 @@ class HomeViewModel: ObservableObject {
                     print("Finished fetching suggestions")
                 }
             }, receiveValue: { [weak self] suggestResults in
-                self?.suggestResults = suggestResults
+                self?.featuredResults = suggestResults
             }).store(in: &subscriptions)
     }
 

@@ -1,7 +1,7 @@
 import UIKit
 
-class DetailImageCell: UICollectionViewCell {
-
+class DetailImageCell: UICollectionViewCell, SelfConfiguringCell {
+   
     @IBOutlet weak var detailImageCell: UIImageView!
     
     static let reuseIdentifier = String(describing: DetailImageCell.self)
@@ -10,6 +10,14 @@ class DetailImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    func configure(with event: Event) {
+        if let image = event.images?.first {
+            if let url = URL(string: image.url) {
+                detailImageCell.load(url: url)
+            }
+        }
     }
 
 }

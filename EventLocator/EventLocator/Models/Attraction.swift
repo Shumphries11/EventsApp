@@ -6,11 +6,11 @@ struct Attraction: Codable, Hashable {
     let id: String
     let url: String?
     let locale: String
-    let externalLinks: ExternalLink?
-    let aliases: [String]?
+//    let externalLinks: ExternalLink?
+//    let aliases: [String]?
     let images: [Image]
     let classifications: [Classification]?
-    let upcomingEvents: UpcomingEvents?
+//    let upcomingEvents: UpcomingEvents?
     let links: Link
 
     private enum CodingKeys: String, CodingKey {
@@ -19,11 +19,11 @@ struct Attraction: Codable, Hashable {
         case id
         case url
         case locale
-        case externalLinks
-        case aliases
+//        case externalLinks
+//        case aliases
         case images
         case classifications
-        case upcomingEvents
+//        case upcomingEvents
         case links = "_links"
     }
 }

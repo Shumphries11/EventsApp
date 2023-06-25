@@ -1,7 +1,7 @@
 import UIKit
 
-class SectionTitleCell: UICollectionViewCell {
-    
+class SectionTitleCell: UICollectionViewCell, SelfConfiguringCell {
+   
     static let reuseIdentifier = String(describing: SectionTitleCell.self)
     static let nib = UINib(nibName: String(describing: SectionTitleCell.self), bundle: nil)
 
@@ -15,5 +15,11 @@ class SectionTitleCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configure(with event: Event) {
+        dump(event)
+    }
+    
+    
 
 }

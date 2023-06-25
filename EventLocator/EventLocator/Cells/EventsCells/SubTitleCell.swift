@@ -1,6 +1,6 @@
 import UIKit
 
-class SubTitleCell: UICollectionViewCell {
+class SubTitleCell: UICollectionViewCell, SelfConfiguringCell {
     
     @IBOutlet weak var subTitleCell: UIView!
     
@@ -10,6 +10,10 @@ class SubTitleCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }

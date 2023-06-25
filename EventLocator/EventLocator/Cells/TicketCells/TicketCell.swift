@@ -1,6 +1,7 @@
 import UIKit
 
-class TicketCell: UICollectionViewCell {
+class TicketCell: UICollectionViewCell, SelfConfiguringCell {
+   
 
     @IBOutlet weak var ticketCell: UIView!
     
@@ -11,5 +12,10 @@ class TicketCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    
+    func configure(with event: Event) {
+        dump(event)
+    }
+    
 
 }

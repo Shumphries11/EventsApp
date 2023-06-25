@@ -10,7 +10,7 @@ struct Venue: Codable, Hashable {
     let aliases: [String]?
     let images: [Image]?
     let distance: Double?
-    let units: String?
+//    let units: String?
     let postalCode: String?
     let timezone: String
     let city: City
@@ -18,14 +18,14 @@ struct Venue: Codable, Hashable {
     let country: Country
     let address: Address
     let location: Location
-    let markets: [Market]?
-    let dmas: [DMAS]?
-    let social: Social?
-    let boxOfficeInfo: BoxOffice?
-    let parkingDetail: String?
-    let accessibleSeatingDetail: String?
-    let generalInfo: Info?
-    let upcomingEvents: UpcomingEvents?
+//    let markets: [Market]?
+//    let dmas: [DMAS]?
+//    let social: Social?
+//    let boxOfficeInfo: BoxOffice?
+//    let parkingDetail: String?
+//    let accessibleSeatingDetail: String?
+//    let generalInfo: Info?
+//    let upcomingEvents: UpcomingEvents?
     let links: Link
 
     private enum CodingKeys: String, CodingKey {
@@ -38,7 +38,7 @@ struct Venue: Codable, Hashable {
         case aliases
         case images
         case distance
-        case units
+//        case units
         case postalCode
         case timezone
         case city
@@ -46,14 +46,14 @@ struct Venue: Codable, Hashable {
         case country
         case address
         case location
-        case markets
-        case dmas
-        case social
-        case boxOfficeInfo
-        case parkingDetail
-        case accessibleSeatingDetail
-        case generalInfo
-        case upcomingEvents
+//        case markets
+//        case dmas
+//        case social
+//        case boxOfficeInfo
+//        case parkingDetail
+//        case accessibleSeatingDetail
+//        case generalInfo
+//        case upcomingEvents
         case links = "_links"
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventTypeCell: UICollectionViewCell {
+class EventTypeCell: UICollectionViewCell, SelfConfiguringCell {
     
     static let reuseIdentifier = String(describing: EventTypeCell.self)
     static let nib = UINib(nibName: String(describing: EventTypeCell.self), bundle: nil)
@@ -18,6 +18,10 @@ class EventTypeCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }

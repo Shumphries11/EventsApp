@@ -1,13 +1,22 @@
 import UIKit
+import SwiftUI
 import Combine
 
-class HomeViewController: UIViewController, Storyboarded {
-    var coordinator: HomeCoordinator?
-    
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+enum Section: String, CaseIterable, Hashable {
+    case homeHeader
+    case nearYou
+    case featured
+    case sectionTitle
+}
 
+class HomeViewController: UIViewController {
+    //    var coordinator: HomeCoordinator?
+    
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Event>!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //    private var items: [Event] = []
     private var viewModel: HomeViewModel!
     private var cancellables: Set<AnyCancellable> = []
     private var subscriptions: Set<AnyCancellable> = []
@@ -22,14 +31,13 @@ class HomeViewController: UIViewController, Storyboarded {
             guard let self = self else { return nil }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[sectionIndex].type
+            let sectionType = snapshot.sectionIdentifiers[sectionIndex]
             switch sectionType {
             case .homeHeader: return LayoutSectionFactory.homeHeader()
             case .sectionTitle: return LayoutSectionFactory.sectionTitle()
             case .nearYou: return LayoutSectionFactory.nearYou()
-            case .sectionTitle: return LayoutSectionFactory.sectionTitle()
+                //            case .sectionTitle: return LayoutSectionFactory.sectionTitle()
             case .featured: return LayoutSectionFactory.featured()
-            default: return nil
             }
         }
         
@@ -45,17 +53,19 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     private func bindViewModel() {
-        viewModel.$results
+        viewModel.$nearYouResults
             .receive(on: DispatchQueue.main)
             .sink { [weak self] results in
+                self?.reloadData()
                 self?.collectionView.reloadData()
                 dump(results)
             }
             .store(in: &cancellables)
         
-        viewModel.$suggestResults
+        viewModel.$featuredResults
             .receive(on: DispatchQueue.main)
             .sink { [weak self] suggestResults in
+                self?.reloadData()
                 self?.collectionView.reloadData()
                 dump(suggestResults)
             }
@@ -63,7 +73,7 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     private func setupData(){
-        viewModel.fetchEvents()
+        viewModel?.fetchEvents()
         viewModel.fetchSuggestions()
     }
     
@@ -85,61 +95,77 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<Section, Event>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
-            guard let self = self else { return nil }
+            guard let self = self else { return UICollectionViewCell() }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[indexPath.section].type
+            let sectionType = snapshot.sectionIdentifiers[indexPath.section]
             
             switch sectionType {
-            case .homeHeader:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHeaderCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .sectionTitle:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SectionTitleCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .nearYou:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearbyCell.reuseIdentifier, for: indexPath)
-                return cell
-            case .featured:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCell.reuseIdentifier, for: indexPath)
-                return cell
-          default:
-                return nil
+            case .homeHeader: return self.configure(HomeHeaderCell.self, with: item, for: indexPath)
+            case .sectionTitle: return self.configure(SectionTitleCell.self, with: item, for: indexPath)
+            case .nearYou: return self.configure(NearbyCell.self, with: item, for: indexPath)
+            case .featured: return self.configure(FeaturedCell.self, with: item, for: indexPath)
             }
         }
-            
-            let sections = [
-                Section(type: .homeHeader, items: [Item()]),
-                Section(type: .sectionTitle, items: [Item()]),
-                Section(type: .nearYou, items: [Item(), Item(), Item()]),
-                Section(type: .sectionTitle, items: [Item()]),
-                Section(type: .featured, items: [Item(), Item(), Item()])
-                ]
-            
-            var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-            snapshot.appendSections(sections)
-            sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
-            dataSource.apply(snapshot, animatingDifferences: false )
+    }
+    
+    func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+        snapshot.appendSections([.homeHeader, .sectionTitle, .nearYou, .featured])
+        snapshot.appendItems([Event()], toSection: .homeHeader)
+        snapshot.appendItems(viewModel.nearYouResults, toSection: .nearYou)
+        snapshot.appendItems(viewModel.featuredResults, toSection: .featured)
+        dataSource.apply(snapshot, animatingDifferences: false )
+    }
+    
+    func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with event: Event, for indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+            fatalError("Unable to dequeue \(cellType)")
+        }
+        cell.configure(with: event)
+        return cell
+        
+    }
+}
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let snapshot = self.dataSource.snapshot()
+        let section = snapshot.sectionIdentifiers[indexPath.section]
+        let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        switch section {
+        case .nearYou:
+            vc.event = viewModel.nearYouResults[indexPath.item]
+            vc.id = viewModel.nearYouResults[indexPath.item].id
+            dump(viewModel.nearYouResults[indexPath.item])
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        case .featured:
+            vc.event = viewModel.featuredResults[indexPath.item]
+            vc.id = viewModel.nearYouResults[indexPath.item].id
+            dump(viewModel.featuredResults[indexPath.item])
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        default:
+            return
+        }
+        
+               
+        
     }
 }
 //extension HomeViewController: UICollectionViewDelegate {
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Events", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
-//        navigationController?.pushViewController(vc, animated: true)
+//        if collectionView.cellForItem(at: indexPath) is SectionTitleCell {
+//            let storyboard: UIStoryboard = UIStoryboard(name: "SeeMore", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "SeeMoreViewController") as! SeeMoreViewController
+//            navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.navigationBar.tintColor = UIColor(named: "appPurple")
+//        }
 //    }
 //}
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.cellForItem(at: indexPath) is SectionTitleCell {
-            let storyboard: UIStoryboard = UIStoryboard(name: "SeeMore", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "SeeMoreViewController") as! SeeMoreViewController
-            navigationController?.pushViewController(vc, animated: true)
-            self.navigationController?.navigationBar.tintColor = UIColor(named: "appPurple")
-        }
-    }
-}
 
 

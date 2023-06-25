@@ -1,10 +1,18 @@
 import UIKit
+import Combine
 
-class TicketViewController: UIViewController, Storyboarded {
+enum SectionD {
+    case ticket
+}
+
+class TicketViewController: UIViewController {
     
-    var coordinator: TicketCoordinator?
+    var ticketEvent: Event?
+    var ticketId: String?
+    private var viewModel: TicketViewModel!
+    private var cancellables: Set<AnyCancellable> = []
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    private var dataSource: UICollectionViewDiffableDataSource<SectionD, Event>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -13,10 +21,9 @@ class TicketViewController: UIViewController, Storyboarded {
             guard let self = self else { return nil }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[sectionIndex].type
+            let sectionType = snapshot.sectionIdentifiers[sectionIndex]
             switch sectionType {
             case .ticket: return LayoutSectionFactory.ticket()
-            default: return nil
             }
         }
         return layout
@@ -30,6 +37,32 @@ class TicketViewController: UIViewController, Storyboarded {
     private func initializeTV() {
         setupTicketVC()
         setupTicketDataSource()
+        setupViewModel()
+        bindViewModel()
+        setupData()
+    }
+    
+    private func bindViewModel() {
+        viewModel.$ticketDetails
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] ticketDetails in
+                if let ticketDetails = ticketDetails {
+                    self?.reloadDetailData()
+                    self?.collectionView.reloadData()
+                    dump(ticketDetails)
+                }
+            }
+            .store(in: &cancellables)
+        
+    }
+    
+    private func setupData(){
+        viewModel?.fetchTicketDetails(id: ticketId!)
+        
+    }
+    
+    private func setupViewModel() {
+        viewModel = TicketViewModel()
     }
     
     private func setupTicketVC() {
@@ -41,29 +74,36 @@ class TicketViewController: UIViewController, Storyboarded {
         collectionView.collectionViewLayout = collectionViewLayout
     }
     
+    
+    
     private func setupTicketDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<SectionD, Event>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
-            guard let self = self else { return nil }
+            guard let self = self else { return UICollectionViewCell() }
             
             let snapshot = self.dataSource.snapshot()
-            let sectionType = snapshot.sectionIdentifiers[indexPath.section].type
+            let sectionType = snapshot.sectionIdentifiers[indexPath.section]
             switch sectionType {
-            case .ticket:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TicketCell.reuseIdentifier, for: indexPath)
-                return cell
-            default:
-                  return nil
-              }
-          }
+            case .ticket: return self.configure(TicketCell.self, with: item, for: indexPath)
+            }
+        }
+    }
+    
+    func reloadDetailData() {
+        var snapshot = NSDiffableDataSourceSnapshot<SectionD, Event>()
+        snapshot.appendSections([.ticket])
+                                 
+        snapshot.appendItems([viewModel.ticketDetails!], toSection: .ticket)
         
-        let sections = [
-            Section(type: .ticket, items: [Item()])
-            ]
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections(sections)
-        sections.forEach { snapshot.appendItems($0.items, toSection: $0) }
         dataSource.apply(snapshot, animatingDifferences: false )
+    }
+   
+        
+        func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with event: Event, for indexPath: IndexPath) -> T {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+                fatalError("Unable to dequeue \(cellType)")
+            }
+            cell.configure(with: event)
+            return cell
     }
 }

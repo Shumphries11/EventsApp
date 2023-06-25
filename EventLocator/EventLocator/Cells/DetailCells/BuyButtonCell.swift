@@ -1,6 +1,6 @@
 import UIKit
 
-class BuyButtonCell: UICollectionViewCell {
+class BuyButtonCell: UICollectionViewCell, SelfConfiguringCell {
 
     @IBOutlet weak var buyButtonCell: UIView!
     
@@ -9,6 +9,10 @@ class BuyButtonCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }

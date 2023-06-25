@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailInfoCell: UICollectionViewCell {
+class DetailInfoCell: UICollectionViewCell, SelfConfiguringCell {
 
     @IBOutlet weak var detailInfoCell: UIView!
     
@@ -10,6 +10,10 @@ class DetailInfoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure(with event: Event) {
+        dump(event)
     }
 
 }
