@@ -7,12 +7,12 @@ enum SectionD {
 
 class TicketViewController: UIViewController {
     
-    var ticketEvent: Event?
+    var ticketEvent: EventDetail?
     var ticketId: String?
     private var viewModel: TicketViewModel!
     private var cancellables: Set<AnyCancellable> = []
     
-    private var dataSource: UICollectionViewDiffableDataSource<SectionD, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<SectionD, EventDetail>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -77,7 +77,7 @@ class TicketViewController: UIViewController {
     
     
     private func setupTicketDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<SectionD, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<SectionD, EventDetail>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return UICollectionViewCell() }
             
@@ -90,7 +90,7 @@ class TicketViewController: UIViewController {
     }
     
     func reloadDetailData() {
-        var snapshot = NSDiffableDataSourceSnapshot<SectionD, Event>()
+        var snapshot = NSDiffableDataSourceSnapshot<SectionD, EventDetail>()
         snapshot.appendSections([.ticket])
                                  
         snapshot.appendItems([viewModel.ticketDetails!], toSection: .ticket)
@@ -99,7 +99,7 @@ class TicketViewController: UIViewController {
     }
    
         
-        func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with event: Event, for indexPath: IndexPath) -> T {
+        func configure<T: SelfConfiguringDetailCell>(_ cellType: T.Type, with event: EventDetail, for indexPath: IndexPath) -> T {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
                 fatalError("Unable to dequeue \(cellType)")
             }

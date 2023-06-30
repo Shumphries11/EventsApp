@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class DetailViewModel: ObservableObject {
-    @Published private(set) var details: Event?
+    @Published private(set) var detail: EventDetail?
     
     private var cancellables: Set<AnyCancellable> = []
     private let apiClient: API
@@ -22,7 +22,7 @@ class DetailViewModel: ObservableObject {
                     print("Finished fetching event")
                 }
             }, receiveValue: { [weak self] details in
-                self?.details = details
+                self?.detail = details
             }).store(in: &cancellables)
     }
 

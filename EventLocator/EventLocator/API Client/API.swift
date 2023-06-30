@@ -104,10 +104,10 @@ struct API {
             .eraseToAnyPublisher()
     }
     
-    func fetchEventDetail(id: String) -> AnyPublisher<Event, Error>{
+    func fetchEventDetail(id: String) -> AnyPublisher<EventDetail, Error>{
         URLSession.shared.dataTaskPublisher(for: EndPoint.request(with: EndPoint.eventDetail(id).url))
             .map(\.data)
-            .decode(type: Event.self, decoder: decoder)
+            .decode(type: EventDetail.self, decoder: decoder)
             .print()
             .mapError { error in
                 switch error {

@@ -1,6 +1,7 @@
 import UIKit
 import SwiftUI
 import Combine
+import MapKit
 
 enum Section: String, CaseIterable, Hashable {
     case homeHeader
@@ -58,7 +59,7 @@ class HomeViewController: UIViewController {
             .sink { [weak self] results in
                 self?.reloadData()
                 self?.collectionView.reloadData()
-                dump(results)
+//                dump(results)
             }
             .store(in: &cancellables)
         
@@ -67,7 +68,7 @@ class HomeViewController: UIViewController {
             .sink { [weak self] suggestResults in
                 self?.reloadData()
                 self?.collectionView.reloadData()
-                dump(suggestResults)
+//                dump(suggestResults)
             }
             .store(in: &subscriptions)
     }
@@ -133,20 +134,26 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let snapshot = self.dataSource.snapshot()
         let section = snapshot.sectionIdentifiers[indexPath.section]
+//        let nearYouLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(([viewModel.nearYouResults[indexPath.item].embedded?.venues[0].location.latitude] as! NSString).doubleValue), longitude: Double(([viewModel.nearYouResults[indexPath.item].embedded?.venues[0].location.longitude] as! NSString).doubleValue))
+//        let featuredLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Double(([viewModel.featuredResults[indexPath.item].embedded?.venues[0].location.latitude] as! NSString).doubleValue), longitude: Double(([viewModel.featuredResults[indexPath.item].embedded?.venues[0].location.longitude] as! NSString).doubleValue))
+//        let nearYouLocation = CLLocationCoordinate2D(latitude: viewModel.nearYouResults[indexPath.item].embedded?.venues[0].location.latitude.toDouble() ?? 0.0, longitude: viewModel.nearYouResults[indexPath.item].embedded?.venues[0].location.longitude.toDouble() ?? 0.0)
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         switch section {
         case .nearYou:
-            vc.event = viewModel.nearYouResults[indexPath.item]
+//            vc.event = viewModel.nearYouResults[indexPath.item]
             vc.id = viewModel.nearYouResults[indexPath.item].id
-            dump(viewModel.nearYouResults[indexPath.item])
+//            vc.location = nearYouLocation
+//            dump(nearYouLocation)
             navigationController?.pushViewController(vc, animated: true)
             return
         case .featured:
-            vc.event = viewModel.featuredResults[indexPath.item]
-            vc.id = viewModel.nearYouResults[indexPath.item].id
-            dump(viewModel.featuredResults[indexPath.item])
+//            vc.event = viewModel.featuredResults[indexPath.item]
+            vc.id = viewModel.featuredResults[indexPath.item].id
+//            vc.location = featuredLocation
+//            dump(featuredLocation)
             navigationController?.pushViewController(vc, animated: true)
             return
         default:
@@ -167,5 +174,16 @@ extension HomeViewController: UICollectionViewDelegate {
 //        }
 //    }
 //}
-
+extension String
+{
+    /// EZSE: Converts String to Double
+    public func toDouble() -> Double?
+    {
+       if let num = NumberFormatter().number(from: self) {
+                return num.doubleValue
+            } else {
+                return nil
+            }
+     }
+}
 

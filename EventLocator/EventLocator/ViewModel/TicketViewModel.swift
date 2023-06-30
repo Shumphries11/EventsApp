@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class TicketViewModel: ObservableObject {
-    @Published private(set) var ticketDetails: Event?
+    @Published private(set) var ticketDetails: EventDetail?
     
     private var cancellables: Set<AnyCancellable> = []
     private let apiClient: API

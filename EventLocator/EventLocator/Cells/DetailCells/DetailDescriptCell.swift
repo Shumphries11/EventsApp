@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailDescriptCell: UICollectionViewCell, SelfConfiguringCell {
+class DetailDescriptCell: UICollectionViewCell, SelfConfiguringDetailCell {
 
     @IBOutlet weak var detailDescriptCell: UILabel!
     
@@ -12,8 +12,8 @@ class DetailDescriptCell: UICollectionViewCell, SelfConfiguringCell {
        
     }
     
-    func configure(with event: Event) {
-        dump(event)
+    func configure(with event: EventDetail) {
+//        dump(event)
     }
 
 }

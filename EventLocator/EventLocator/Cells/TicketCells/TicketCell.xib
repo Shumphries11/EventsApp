@@ -22,9 +22,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYv-i9-H7I">
                                 <rect key="frame" x="14" y="14" width="358" height="232"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2t-lu-hvG">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="232"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.602715373" blue="0.602715373" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="O2t-lu-hvG" secondAttribute="trailing" id="Cb4-sA-zbS"/>
+                                    <constraint firstItem="O2t-lu-hvG" firstAttribute="leading" secondItem="OYv-i9-H7I" secondAttribute="leading" id="NIc-yh-BC0"/>
+                                    <constraint firstAttribute="bottom" secondItem="O2t-lu-hvG" secondAttribute="bottom" id="Q4e-ve-vN7"/>
                                     <constraint firstAttribute="height" constant="232" id="dik-Bh-1N8"/>
+                                    <constraint firstItem="O2t-lu-hvG" firstAttribute="top" secondItem="OYv-i9-H7I" secondAttribute="top" id="w1W-0G-H7n"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vivamus Dj Music Concert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5a-qA-LlY">
@@ -258,6 +267,13 @@
                 <constraint firstItem="jDI-7T-DIJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WPC-s0-reF"/>
             </constraints>
             <connections>
+                <outlet property="imgEvent" destination="O2t-lu-hvG" id="D0A-IY-JZb"/>
+                <outlet property="lblDate" destination="Rti-5k-VLQ" id="cHt-8V-SB8"/>
+                <outlet property="lblDescription" destination="wMy-vj-E3Z" id="nu6-pa-xAV"/>
+                <outlet property="lblLocation" destination="5MO-vk-Wm7" id="ek3-9i-6t0"/>
+                <outlet property="lblSeat" destination="xUa-6K-qtz" id="c3y-Dy-Pb3"/>
+                <outlet property="lblTime" destination="O0K-3I-hai" id="0ea-C9-eBo"/>
+                <outlet property="lblTitle" destination="P5a-qA-LlY" id="Z1L-rw-Pjz"/>
                 <outlet property="ticketCell" destination="jDI-7T-DIJ" id="fIp-HD-us8"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.366197183098592"/>

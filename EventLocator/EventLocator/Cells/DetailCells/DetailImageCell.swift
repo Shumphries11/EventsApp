@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailImageCell: UICollectionViewCell, SelfConfiguringCell {
+class DetailImageCell: UICollectionViewCell, SelfConfiguringDetailCell {
    
     @IBOutlet weak var detailImageCell: UIImageView!
     
@@ -12,7 +12,7 @@ class DetailImageCell: UICollectionViewCell, SelfConfiguringCell {
         
     }
     
-    func configure(with event: Event) {
+    func configure(with event: EventDetail) {
         if let image = event.images?.first {
             if let url = URL(string: image.url) {
                 detailImageCell.load(url: url)

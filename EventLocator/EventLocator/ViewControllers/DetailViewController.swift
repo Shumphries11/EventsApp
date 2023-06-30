@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 import Combine
 
 enum SectionC {
@@ -11,13 +12,14 @@ enum SectionC {
 }
 
 class DetailViewController: UIViewController {
-    var event: Event?
     var id: String?
+    var coordinate: Venue?
+    
     private var viewModel: DetailViewModel!
     private var cancellables: Set<AnyCancellable> = []
     
     
-    private var dataSource: UICollectionViewDiffableDataSource<SectionC, Event>!
+    private var dataSource: UICollectionViewDiffableDataSource<SectionC, EventDetail>!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -43,7 +45,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeDV()
-        title = event?.name
+        
+        
     }
     
     private func initializeDV() {
@@ -55,17 +58,27 @@ class DetailViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.$details
+        viewModel.$detail
             .receive(on: DispatchQueue.main)
             .sink { [weak self] details in
                 if let details = details {
                     self?.reloadDetailData()
                     self?.collectionView.reloadData()
-                    dump(details)
+                    if let venue = details.embedded?.venues.first {
+                        self?.setupVenueDetails(venue: venue)
+                    }
                 }
             }
             .store(in: &cancellables)
         
+    }
+    
+    private func setupVenueDetails(venue: Venue) {
+        if let latitude =  Double(venue.location.latitude), let longitude = Double(venue.location.latitude) {
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            dump(coordinate)
+
+        }
     }
     
     private func setupData(){
@@ -92,7 +105,7 @@ class DetailViewController: UIViewController {
     }
     
     private func configureDetailDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<SectionC, Event>(collectionView: collectionView) { [weak self]
+        dataSource = UICollectionViewDiffableDataSource<SectionC, EventDetail>(collectionView: collectionView) { [weak self]
             (collectionView, indexPath, item) in
             guard let self = self else { return UICollectionViewCell() }
             
@@ -104,36 +117,43 @@ class DetailViewController: UIViewController {
             case .detailTitle: return self.configure(DetailTitleCell.self, with: item, for: indexPath)
             case .detailDescription: return self.configure(DetailDescriptCell.self, with: item, for: indexPath)
             case .detailInfo: return self.configure(DetailInfoCell.self, with: item, for: indexPath)
-            case .locationPin: return self.configure(DetailMapCell.self, with: item, for: indexPath)
+            case .locationPin:
+                let cell = self.configure(DetailMapCell.self, with: item, for: indexPath)
+                cell.annotate(annotation: coordinate)
+                return cell
             case .buyButton: return self.configure(BuyButtonCell.self, with: item, for: indexPath)
             }
         }
     }
         
         func reloadDetailData() {
-            var snapshot = NSDiffableDataSourceSnapshot<SectionC, Event>()
+            title = viewModel.detail?.name
+            var snapshot = NSDiffableDataSourceSnapshot<SectionC, EventDetail>()
             snapshot.appendSections([.detailImage, .detailTitle, .detailDescription, .detailInfo, .locationPin, .buyButton])
+            
+            var detailImg = viewModel.detail!
+            detailImg.id = detailImg.id + ".img"
                                      
-            snapshot.appendItems([Event()], toSection: .detailImage)
+            snapshot.appendItems([detailImg], toSection: .detailImage)
             
-            snapshot.appendItems([viewModel.details!], toSection: .detailTitle)
+            snapshot.appendItems([viewModel.detail!], toSection: .detailTitle)
             
-            var detailDescript = viewModel.details!
+            var detailDescript = viewModel.detail!
             detailDescript.id = detailDescript.id + ".descript"
             
             snapshot.appendItems([detailDescript], toSection: .detailDescription)
             
-            var detailInfo = viewModel.details!
+            var detailInfo = viewModel.detail!
             detailInfo.id = detailInfo.id + ".info"
             
             snapshot.appendItems([detailInfo], toSection: .detailInfo)
             
-            var detailLocation = viewModel.details!
+            var detailLocation = viewModel.detail!
             detailLocation.id = detailLocation.id + ".loctaion"
             
             snapshot.appendItems([detailLocation], toSection: .locationPin)
             
-            var detailBuy = Event()
+            var detailBuy = EventDetail()
             detailBuy.id = ".buy"
             
             snapshot.appendItems([detailBuy], toSection: .buyButton)
@@ -141,7 +161,7 @@ class DetailViewController: UIViewController {
             dataSource.apply(snapshot, animatingDifferences: false )
         }
         
-        func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with event: Event, for indexPath: IndexPath) -> T {
+        func configure<T: SelfConfiguringDetailCell>(_ cellType: T.Type, with event: EventDetail, for indexPath: IndexPath) -> T {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
                 fatalError("Unable to dequeue \(cellType)")
             }
@@ -160,12 +180,12 @@ extension DetailViewController: UICollectionViewDelegate {
         
         switch section {
         case .buyButton:
-            vc.ticketEvent = event
+//            vc.ticketEvent =
             vc.ticketId = id!
             dump(id!)
             navigationController?.pushViewController(vc, animated: true)
             return
-       
+
         default:
             return
         }

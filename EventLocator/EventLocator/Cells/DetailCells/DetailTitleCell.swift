@@ -1,8 +1,10 @@
 import UIKit
 
-class DetailTitleCell: UICollectionViewCell, SelfConfiguringCell {
+class DetailTitleCell: UICollectionViewCell, SelfConfiguringDetailCell {
 
     @IBOutlet weak var detailTitleCell: UIView!
+    
+    @IBOutlet weak var lblTitle: UILabel!
     
     static let reuseIdentifier = String(describing: DetailTitleCell.self)
     static let nib = UINib(nibName: String(describing: DetailTitleCell.self), bundle: nil)
@@ -12,8 +14,8 @@ class DetailTitleCell: UICollectionViewCell, SelfConfiguringCell {
         // Initialization code
     }
     
-    func configure(with event: Event) {
-        dump(event)
+    func configure(with event: EventDetail) {
+        lblTitle.text = event.name
     }
 
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class BuyButtonCell: UICollectionViewCell, SelfConfiguringCell {
+class BuyButtonCell: UICollectionViewCell, SelfConfiguringDetailCell {
 
     @IBOutlet weak var buyButtonCell: UIView!
     
@@ -11,8 +11,8 @@ class BuyButtonCell: UICollectionViewCell, SelfConfiguringCell {
         super.awakeFromNib()
     }
     
-    func configure(with event: Event) {
-        dump(event)
+    func configure(with event: EventDetail) {
+//        dump(event)
     }
 
 }

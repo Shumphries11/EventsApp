@@ -13,7 +13,7 @@ class SubTitleCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with event: Event) {
-        dump(event)
+//        dump(event)
     }
 
 }
